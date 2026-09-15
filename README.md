@@ -46,18 +46,20 @@ The main research question is:
 
 ### Project structure
 
-```text
 Evidence_RAG/
+│
 ├── data/
-│   └── research-paper PDFs
+│   └── [your 21 research PDFs]
+│
 ├── experiments/
 │   ├── basic_rag_results.json
 │   ├── evidencerag_final_results.json
 │   ├── evidencerag_results.json
 │   ├── questions.json
+│   ├── retrieval_results.json
 │   ├── reference_aware_retrieval_results.json
-│   ├── reference_aware_retrieval_v2_results.json
-│   └── retrieval_results.json
+│   └── reference_aware_retrieval_v2_results.json
+│
 ├── src/
 │   ├── cleaner.py
 │   ├── chunker.py
@@ -71,11 +73,13 @@ Evidence_RAG/
 │   ├── preprocess.py
 │   ├── retriever.py
 │   ├── retriever_reference_aware.py
-│   └── threshold_experiment.py
-├── .gitignore
+│   ├── threshold_experiment.py
+│   └── demo.py
+│
+├── EvidenceRAG_Evaluation.ipynb
 ├── README.md
-└── requirements.txt
-```
+├── requirements.txt
+└── .gitignore
 
 ### Installation
 
