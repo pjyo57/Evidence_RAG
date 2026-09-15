@@ -48,8 +48,8 @@ The main research question is:
 ```text
 Evidence_RAG/
 │
-├── data/
-│   └── [your 21 research PDFs]
+├──data/
+│   └── research-paper PDFs
 │
 ├── experiments/
 │   ├── basic_rag_results.json
