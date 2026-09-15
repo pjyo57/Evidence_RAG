@@ -1,0 +1,112 @@
+[
+  {
+    "id": "Q1",
+    "question": "What is factual consistency in abstractive text summarization?",
+    "type": "single_paper",
+    "answerable": true,
+    "expected_sources": ["1910.12840v1.pdf"]
+  },
+  {
+    "id": "Q2",
+    "question": "What is the main goal of TruthfulQA?",
+    "type": "single_paper",
+    "answerable": true,
+    "expected_sources": ["2109.07958v2.pdf"]
+  },
+  {
+    "id": "Q3",
+    "question": "What is SelfCheckGPT designed to detect?",
+    "type": "single_paper",
+    "answerable": true,
+    "expected_sources": ["2303.08896v3.pdf"]
+  },
+  {
+    "id": "Q4",
+    "question": "What is the main idea of FactScore?",
+    "type": "single_paper",
+    "answerable": true,
+    "expected_sources": ["2305.14251v2.pdf"]
+  },
+  {
+    "id": "Q5",
+    "question": "What are some major categories of hallucination discussed in research on large language models?",
+    "type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2311.05232v2.pdf",
+      "2024.emnlp-main.1088.pdf",
+      "2025.cl-4.9.pdf"
+    ]
+  },
+  {
+    "id": "Q6",
+    "question": "What approaches have researchers proposed for evaluating factuality or factual consistency in generated text?",
+    "type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "1910.12840v1.pdf",
+      "2112.08542v2.pdf",
+      "2204.04991v3.pdf",
+      "2305.16739v1.pdf"
+    ]
+  },
+  {
+    "id": "Q7",
+    "question": "What are some approaches for detecting hallucinations without relying only on direct human evaluation?",
+    "type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2303.08896v3.pdf",
+      "2406.15927v1.pdf",
+      "s41586-024-07421-0.pdf"
+    ]
+  },
+  {
+    "id": "Q8",
+    "question": "How does SelfCheckGPT differ from semantic entropy approaches to hallucination detection?",
+    "type": "comparison",
+    "answerable": true,
+    "expected_sources": [
+      "2303.08896v3.pdf",
+      "2406.15927v1.pdf",
+      "s41586-024-07421-0.pdf"
+    ]
+  },
+  {
+    "id": "Q9",
+    "question": "How does FactScore differ from factual consistency evaluation methods developed for abstractive summarization?",
+    "type": "comparison",
+    "answerable": true,
+    "expected_sources": [
+      "2305.14251v2.pdf",
+      "1910.12840v1.pdf",
+      "2112.08542v2.pdf"
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "What does the corpus say about the best prompting strategy for predicting tomorrow's stock-market closing price?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": "Q11",
+    "question": "Which hallucination detection method is definitively the most accurate method for every possible large language model and every task?",
+    "type": "unanswerable",
+    "answerable": false,
+    "expected_sources": []
+  },
+  {
+    "id": "Q12",
+    "question": "Do all studies in this corpus agree on a single definition and measurement of hallucination?",
+    "type": "ambiguous",
+    "answerable": true,
+    "expected_sources": [
+      "2311.05232v2.pdf",
+      "2024.emnlp-main.1088.pdf",
+      "2024.emnlp-main.375.pdf",
+      "2025.cl-4.9.pdf"
+    ]
+  }
+]

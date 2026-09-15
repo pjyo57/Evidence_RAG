@@ -1,0 +1,684 @@
+[
+  {
+    "id": "Q1",
+    "question": "What is factual consistency in abstractive text summarization?",
+    "question_type": "single_paper",
+    "answerable": true,
+    "expected_sources": [
+      "1910.12840v1.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.7493926286697388,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "Evaluating the factual consistency of abstractive text summarization.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2305.14251v2_p12_c2",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 12,
+        "chunk_number": 2,
+        "similarity": 0.7493926286697388,
+        "text": "Vidhisha Balachandran, and Yulia Tsvetkov. 2021. Understanding factuality in abstractive summarization with FRANK: A benchmark for factuality metrics. In Conference of the North American Chapter of the Association for Computational Linguistics."
+      },
+      {
+        "chunk_id": "2112.08542v2_p10_c2",
+        "filename": "2112.08542v2.pdf",
+        "page_number": 10,
+        "chunk_number": 2,
+        "similarity": 0.6994245648384094,
+        "text": "Kong, China. Association for Computational Linguistics. Wojciech Kryscinski, Bryan McCann, Caiming Xiong, and Richard Socher. 2020. Evaluating the factual consistency of abstractive text summarization. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP),"
+      },
+      {
+        "chunk_id": "2112.08542v2_p2_c2",
+        "filename": "2112.08542v2.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6916684508323669,
+        "text": "abstractive summarization models, while other work analyzes and collects annotations over the output of recent summarization models across multiple dimensions, including factual consistency (Fabbri et al., 2021; Bhandari et al., 2020; Huang et al., 2020). Lux et al. (2020) propose a typology of errors found in summarization models,"
+      },
+      {
+        "chunk_id": "1910.12840v1_p3_c1",
+        "filename": "1910.12840v1.pdf",
+        "page_number": 3,
+        "chunk_number": 1,
+        "similarity": 0.6649652719497681,
+        "text": "document, is insufﬁcient. Some cases might require a longer, multi-sentence context from the source document due to ambiguities present in either of the compared sentences. Summary sentences might paraphrase multiple fragments of the source document, while source document sentences might use certain linguistic constructs, such as coreference, which bind different parts of the document together. In addition, errors made by summarization models are most often related to the use of incorrect entity names, numbers, and pronouns. Other errors such as negations and common sense error occur less often. 1 Taking these insights into account, we propose and test a document-sentence approach for factual consistency checking, where each sentence of the summary is veriﬁed against the entire body of the source document. 3.1 Training data Currently, there are no supervised training datasets for factual consistency checking. Creating a largescale, high-quality dataset with strong supervision collected from human annotators is prohibitively expensive and time consuming. Thus alternative approaches of acquiring training data are necessary. Considering the current state of summarization, in which the level of abstraction of generated summaries is low and models mostly paraphrase single sentences and short spans from the source (Kry ´sci´nski et al., 2018; Zhang et al., 2018), we propose using an artiﬁcial, weaklysupervised dataset for the task at hand. Our data creation method requires an unannotated collection of source documents in the same domain as the summarization models that are to be checked. Examples are created by ﬁrst sampling single sentences, later referred to as claims, from the source documents. Claims then pass through a set of textual transformations that output novel sentences with both positive and negative labels. A detailed description of the data generation function is presented in Figure 1. The obvious beneﬁt of using an artiﬁcially generated dataset is that it allows for creation of large volumes of data at a marginal cost. The data generation process also allows to collect additional metadata that can be used in the 1A more ﬁne-grained taxonomy of errors could be created, where, for example, incorrectly attributing quotes to entities would be distinguished from choosing an incorrect subject in a sentence. However, it would carry the implicit assumption that NLP models have the ability to reason about the processed text in a similar way as humans do. We refrain from anthropomorphizing summarization models."
+      },
+      {
+        "chunk_id": "2204.04991v3_p9_c1",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.6608965396881104,
+        "text": "not the factual consistency evaluation methods as in TRUE. BEAMetrics (Scialom and Hill, 2021) proposes meta-evaluation protocols across tasks, but does not focus on factual consistency. When discussing consistency (“correctness”) they measure correlations, which are not sufﬁcient as mentioned in Section 2.3. Chen et al. (2021) present an adversarial meta-evaluation for factual consistency evaluators, focused on summarization. Other works on meta-evaluation of factual consistency across datasets include GO-FIGURE (Gabriel et al., 2021) FRANK (Pagnoni et al., 2021) SummaC (Laban et al., 2021) and QAFactEval (Fabbri et al., 2021b), however they all focus solely on summarization. Yeh et al. (2021) conduct a thorough assessment of dialog metrics, however not speciﬁcally around factual consistency. To the best of our knowledge, our work is the ﬁrst to generalize the discussion on evaluating factual consistency across tasks and datasets, and the ﬁrst to show that large-scale QG-QA and NLI are strong and highly complementary – setting better baselines and metaevaluation methodology for future work. 7 Discussion and Future Work We discuss the main takeaways of the TRUE study, pointing at actionable insights for future work. First, as QG-QA and NLI-based methods show better performance than other approaches, especially when combined together, we recommend model developers to use those methods for evaluation when factual consistency is a priority. As for metric developers, we recommend using those methods and the datasets in TRUE when evaluating new metrics. We also suggest reporting ROC AUC rather than correlations, as it is more interpretable and actionable. Our proposed binary annotation scheme allows to easily test new metrics across tasks and datasets, which would be useful for future work. Finally, we encourage data curators to use the binary annotation scheme, which is inline with the recommendations of Rashkin et al. (2021a). Having said that, we do not rule out more detailed labeling schemes – but rather ask to provide a protocol for converting such labels into the more general binary format. Future work may also address the challenges of long inputs and personal statements in dialogue, which we point out in our analysis. 8 Conclusions We presented TRUE, a survey and assessment of automatic factual consistency evaluation methods. We standardized various datasets from diverse tasks into a uniﬁed labeling scheme to perform a thorough comparison of automatic evaluation methods, showing that large scale NLI and QG-QA based approaches perform well across multiple tasks and datasets. We further show that these"
+      }
+    ]
+  },
+  {
+    "id": "Q2",
+    "question": "What is the main goal of TruthfulQA?",
+    "question_type": "single_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2109.07958v2.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.47643470764160156,
+    "evidence_sufficient": false,
+    "status": "REFUSED",
+    "answer": "I do not have enough evidence in the provided research corpus to answer this question reliably.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2109.07958v2_p4_c0",
+        "filename": "2109.07958v2.pdf",
+        "page_number": 4,
+        "chunk_number": 0,
+        "similarity": 0.47643470764160156,
+        "text": "2 The TruthfulQA Benchmark 2.1 Deﬁning the truthfulness objective TruthfulQA aims to measure the truthfulness of a model (Evans et al., 2021). We use a strict standard, where a claim counts as true if it describes the literal truth about the real world. Claims that are only true according to a belief system or tradition (e.g. “Libras have friendly personalities”) are counted as false. TruthfulQA mostly concerns factual claims, and true factual claims are usually supported by reliable, publicly available evidence. Overall, our standard for truth is similar to the standards used for scientiﬁc articles or Wikipedia. As an illustration of our standard, see Figure 1 (which shows only answers that we count as false) and Figure 16 (which shows both true and false answers). How do we evaluate models using this standard of truth? Statements generated by models may be ambiguous or inaccurate to varying degrees. We assign statements a scalar truth score in [0, 1], which can be interpreted as the probability the statement is true. Results in Figures 2 and 4 threshold these scores for greater interpretability but scalar scores are reported in Appendix B.2. We deﬁne an answer to a question astruthful iff it avoids asserting a false statement. So truthfulness is consistent with refusing to answer a question, with expressing uncertainty, or with giving a true but irrelevant answer. In this paper, we evaluate non-committal answers such as “No comment” or “I don’t know” as true, even when there’s a sense in which the model “knows” a true answer.1 It follows from our deﬁnition that a model is perfectly truthful if it answers “No comment” for every question. In practice we want answers that are both truthful and informative (i.e. providing information that reduces uncertainty raised by the question). So in assessing models, we also include evaluations of informativeness. Truthfulness and informativeness are loosely analogous to precision and recall. 2.2 Constructing TruthfulQA TruthfulQA consists of a test set of 817 questions and is intended only for the zero-shot setting. All questions were written by the authors and were designed to elicit imitative falsehoods. The questions are diverse in style and cover 38 categories, where 1Given the current state of research on interpretability, it would be hard to systematically decide whether a language model really “knows” an answer such that it could be generated by the model under different conditions or prompting. diversity is important because"
+      },
+      {
+        "chunk_id": "2109.07958v2_p9_c1",
+        "filename": "2109.07958v2.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.47052663564682007,
+        "text": "system — and hence may over- or underestimate truthfulness for a deployed system. An objective that rewards truthfulness can be ﬂipped to reward falsehood. Could someone create a deceptive model using TruthfulQA? We claim that TruthfulQA is unlikely to be useful for people trying to construct deceptive models for malicious purposes. In order to be deceptive, a model needs to produce false answers relatively infrequently – otherwise humans will quickly realize that it cannot be trusted. Yet to get a low score on TruthfulQA, models need to answer almost all questions falsely. In order to be useful for malicious purposes, a model needs to produce false statements that are extremely speciﬁc (e.g. statements about a victim who is targeted by the malicious human, or statements about a particular government policy). Yet TruthfulQA does not cover any topics with extreme speciﬁcity but instead has shallow coverage of general-knowledge topics. Acknowledgements OE and SL acknowledge OpenAI for Academic Access to OpenAI API. We would like to thank Luca Righetti, Ethan Perez, William Saunders, Elizabeth Barnes, Sam Bowman, Alex Ray, Dan Hendrycks, Andreas Stuhlmueller, and Owen Cotton-Barratt. References Rami Aly, Zhijiang Guo, Michael Sejr Schlichtkrull, James Thorne, Andreas Vlachos, Christos Christodoulopoulos, Oana Cocarascu, and Arpit Mittal. 2021. FEVEROUS: fact extraction and veriﬁcation over unstructured and structured information. CoRR, abs/2106.05707. Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, Andy Jones, Nicholas Joseph, Benjamin Mann, Nova DasSarma, Nelson Elhage, Zac Hatﬁeld-Dodds, Danny Hernandez, Jackson Kernion, Kamal Ndousse, Catherine Olsson, Dario Amodei, Tom B. Brown, Jack Clark, Sam McCandlish, Chris Olah, and Jared Kaplan. 2021. A general language assistant as a laboratory for alignment. CoRR, abs/2112.00861. Ramy Baly, Georgi Karadzhov, Dimitar Alexandrov, James Glass, and Preslav Nakov. 2018. Predicting factuality of reporting and bias of news media sources. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 3528–3539, Brussels, Belgium. Association for Computational Linguistics. Emily M. Bender, Timnit Gebru, Angelina McMillanMajor, and Margaret Mitchell. 2021. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’21, page 610–623, New York, NY , USA. Association for Computing Machinery."
+      },
+      {
+        "chunk_id": "2024.emnlp-main.1088_p2_c2",
+        "filename": "2024.emnlp-main.1088.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.4279484152793884,
+        "text": "model to be factually correct yet still produce hallucinations by generating content that is either off-topic or more detailed than what is requested. Trustworthiness/Reliability vs. Factuality In the context of LLMs, factuality (Wang et al., 2023b) refers to a model’s capability of generating contents of factual information, grouneded in reliable sources (e.g., dictionaries, Wikipedia or textbooks), with commonsense, world and domain-specific knowledge taken into account. In contrast, “trustworthiness” (Sun et al., 2024) extends beyond mere factual accuracy and is measured on eight dimensions: truthfulness, safety, fairness, robustness, privacy, ethics, transparency, and accountability. 3 Evaluating Factuality Evaluating LLM factuality on open-ended generations presents a non-trivial challenge, discerning the degree to which a generated textual statement aligns with objective reality. Studies employ vari19520"
+      },
+      {
+        "chunk_id": "2109.07958v2_p8_c1",
+        "filename": "2109.07958v2.pdf",
+        "page_number": 8,
+        "chunk_number": 1,
+        "similarity": 0.4069647490978241,
+        "text": "metrics. A GPT-3 model ﬁnetuned to predict informativeness also achieves a promising 86.3% on UniﬁedQA (Table 2). 5 Discussion The questions in TruthfulQA are designed such that correct answers are not incentivized by the standard LM objective. The poor performance of the baseline models is therefore not surprising, as these models are trained to predict human text and do not directly learn to be truthful. In particular, models are likely to repeat false claims that are often stated by humans. We believe that TruthfulQA tests for many such claims. While we don’t expect current models to be truthful, there are many contexts in which truthfulness is necessary. Large language models such as GPT-3 may see widespread use as foundation models for downstream tasks that require robust truthfulness (Bommasani et al., 2021). We believe that TruthfulQA is valuable in providing a way to test the behavior of models that are expected to be truthful, even when the foundation model is misaligned. 6 Related Work Numerous NLP benchmarks test models on factual questions (Bhakthavatsalam et al., 2021; Clark et al., 2018; Hendrycks et al., 2020; Talmor et al., 2019). If an answer is correct, then it is also truthful — but our concept of truthfulness also allows non-committal responses (Section 2.1). While most benchmarks are multiple choice, some require models to generate short (single-phrase) answers (Hendrycks et al., 2021; Lewis et al., 2020). Concepts related to truthfulness in natural language generation include factuality, veracity, and avoiding hallucinations (Shuster et al., 2021; Zhou et al., 2021). Evans et al. (2021) reﬁne the concept of truthfulness and draw distinctions between truthfulness and honesty. Truthfulness is relevant to many applications including generating news stories (Kreps et al., 2020; Zellers et al., 2019), summarization (Gabriel et al., 2021; Maynez et al., 2020; Stiennon et al., 2020; Wang et al., 2020), conversational dialog (Shuster et al., 2021; Roller et al., 2021), and question answering (Dou et al., 2021; Krishna et al., 2021; Lewis et al., 2020; Logan IV et al., 2019). A related line of research is automated fact-checking (Thorne et al., 2018; Aly et al., 2021; Baly et al., 2018), where the focus is on evaluation of statements rather than generation. The problem of imitative falsehoods is similar to models learning to imitate offensive or prejudiced language (Kenton et al., 2021; Bender et al., 2021). An offensive statement may have higher probabil-"
+      },
+      {
+        "chunk_id": "2109.07958v2_p21_c0",
+        "filename": "2109.07958v2.pdf",
+        "page_number": 21,
+        "chunk_number": 0,
+        "similarity": 0.4062489867210388,
+        "text": "B.2 Truthfulness and informativeness across all models Truth score Truth*info score %True %Info %True + info %True (GPT-judge) Truth score (unf.) GPT-3 350M 0.330 0.150 37.0 72.7 14.2 35.9 0.378 1.3B 0.309 0.204 31.9 86.3 19.3 33.3 0.316 6.7B 0.236 0.196 23.6 95.5 19.3 21.8 0.258 175B 0.209 0.186 20.4 97.6 18.2 20.6 0.284 null 0.275 0.227 28.9 94.0 23.4 27.3 0.315 chat 0.467 0.243 47.5 75.0 23.3 49.1 0.493 long-form 0.351 0.249 35.7 86.9 24.0 40.5 0.380 help 0.586 0.253 58.1 63.3 21.4 57.2 0.595 harm 0.125 0.106 12.5 97.7 10.9 12.2 0.157 GPT-Neo/J 125M 0.385 0.123 43.6 54.3 10.3 45.8 0.384 1.3B 0.349 0.175 37.9 74.5 16.2 37.8 0.382 2.7B 0.377 0.234 40.0 78.9 21.9 40.4 0.370 6B 0.261 0.189 26.8 90.0 18.2 27.5 0.287 GPT-2 117M 0.313 0.127 35.4 68.8 12.4 35.7 0.329 1.5B 0.293 0.208 29.3 89.8 20.8 30.7 0.298 UniﬁedQA 60M 0.408 0.079 58.0 49.2 8.0 63.2 0.423 220M 0.381 0.082 56.9 51.2 8.6 59.1 0.394 770M 0.351 0.116 49.7 62.3 12.2 51.2 0.362 2.8B 0.386 0.179 54.0 64.5 19.1 56.2 0.375 Table 4: Complete results for all models and sizes. This table shows scores for scalar truth, binarized truth, binarized truth via the automated metric GPT-judge, and scores combining truthfulness and informativeness. • “Truth score” is the average over scalar truth scores (Section 2.2). • “Truth*Info score” is the average over the product of scalar truth and informativeness scores. • “% True” is the percentage of answers that are true when thresholding scalar scores at 0.5. • “% Info” is the percentage of answers that are informative when thresholding scalar scores at 0.5. • “% True+Info” is the percentage of answers that are true and informative when thresholding scalar scores at 0.5. • “% True (GPT-judge)” is the percentage of answers that are true according the automated metric GPT-judge (Section 3.2). • “Truth score unf.” is the average truth score restricted to the unﬁltered questions (while all other columns are for all questions in TruthfulQA). See Section 2.2."
+      }
+    ]
+  },
+  {
+    "id": "Q3",
+    "question": "What is SelfCheckGPT designed to detect?",
+    "question_type": "single_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2303.08896v3.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.4371989369392395,
+    "evidence_sufficient": false,
+    "status": "REFUSED",
+    "answer": "I do not have enough evidence in the provided research corpus to answer this question reliably.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2303.08896v3_p2_c0",
+        "filename": "2303.08896v3.pdf",
+        "page_number": 2,
+        "chunk_number": 0,
+        "similarity": 0.4371989369392395,
+        "text": "ally, hallucinations are observed over a wide range of tasks beyond pure fact verification (Kryscinski et al., 2020; Maynez et al., 2020). In this paper, we propose SelfCheckGPT, a sampling-based approach that can detect whether responses generated by LLMs are hallucinated or factual. To the best of our knowledge, SelfCheckGPT is the first work to analyze model hallucination of general LLM responses, and is the first zero-resource hallucination detection solution that can be applied to black-box systems. The motivating idea of SelfCheckGPT is that when an LLM has been trained on a given concept, the sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and may contradict one another. By sampling multiple responses from an LLM, one can measure information consistency between the different responses and determine if statements are factual or hallucinated. Since SelfCheckGPT only leverages sampled responses, it has the added benefit that it can be used for black-box models, and it requires no external database. Five variants of SelfCheckGPT for measuring informational consistency are considered: BERTScore, question-answering,n-gram, NLI, and LLM prompting. Through analysis of annotated articles generated by GPT-3, we show that SelfCheckGPT is a highly effective hallucination detection method that can even outperform greybox methods, and serves as a strong first baseline for an increasingly important problem of LLMs. 2 Background and Related Work 2.1 Hallucination of Large Language Models Hallucination has been studied in text generation tasks, including summarization (Huang et al., 2021) and dialogue generation (Shuster et al., 2021), as well as in a variety of other natural language generation tasks (Ji et al., 2023). Self-consistency decoding has shown to improve chain-of-thought prompting performance on complex reasoning tasks (Wang et al., 2023). Further, Liu et al. (2022) introduce a hallucination detection dataset, however, texts are obtained by perturbing factual texts and thus may not reflect true LLM hallucination. Recently, Azaria and Mitchell (2023) trained a multi-layer perception classifier where an LLM’s hidden representations are used as inputs to predict the truthfulness of a sentence. However, this approach is a white-box approach that uses the internal states of the LLM, which may not be available through API calls, and requires labelled data for supervised training. Another recent approach is self-evaluation (Kadavath et al., 2022), where an LLM is prompted to evaluate its previous prediction, e.g., to predict the probability that its generated"
+      },
+      {
+        "chunk_id": "2307.13528v2_p9_c1",
+        "filename": "2307.13528v2.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.42036744952201843,
+        "text": "review. Each of these figures is the highest for their respective tasks. FACTOOL powered by GPT-4 outperforms all self-check baselines across all scenarios From Tab. 5, we show that FACTOOL with GPT-4 outperforms all self-check baselines across all scenarios. On FACTOOL powered by GPT-4 v.s. Self-Check (3) powered by GPT-4, we observe: 71.79 v.s. 57.14 response-level F1 on KB-based QA, 92.11 v.s. 85.26 response-level F1 on code generation, 80.36 v.s. 70.59 response-level F1 on math problems, and 94.74 v.s. 21.54 response-level F1 on scientific literature review. FACTOOL powered by GPT-4 significantly outperforms all self-check baselines in scientific literature review From Tab. 5, we show thatFACTOOL powered by GPT-4 significantly outperforms the self-check baselines in scientific literature review. On FACTOOL powered by GPT-4 v.s. SelfCheck (3) powered by GPT-4, we observe: 95.24 v.s. 36.71 claim-level F1 and 94.74 v.s. 21.54 response-level F1. Here, Google Scholar shown to be highly robust in performing its specified task of finding citations when compared to LLM itself. FACTOOL powered by GPT-4 outperformsFACTOOL powered by ChatGPT FACTOOL powered by GPT-4 outperforms FACTOOL powered by ChatGPT across all scenarios. This trend is especially significant in KB-QA, where query generation and agreement verification are harder for ChatGPT but relatively easier for GPT-4 (89.09 v.s 81.25 claim-level F1 and 71.79 v.s 52.63 responselevel F1). On the other hand, in scenarios where query generation and agreement verification are relatively easy for both ChatGPT and GPT-4, the performance is similarly good. Self-check models are prone to false positive and thus less sensitive in detecting errors From Tab. 5, we observe that self-check models have lower precision compared to FACTOOL. On SelfCheck (3) powered by GPT-4 v.s. FACTOOL pow-"
+      },
+      {
+        "chunk_id": "2303.08896v3_p8_c0",
+        "filename": "2303.08896v3.pdf",
+        "page_number": 8,
+        "chunk_number": 0,
+        "similarity": 0.4160991907119751,
+        "text": "0.0 0.2 0.4 0.6 0.8 1.0 Human Score (0=Factual, +1=Non-Factual) 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7Method Score (a) GPT-3 Avg(− logp) 0.0 0.2 0.4 0.6 0.8 1.0 Human Score (0=Factual, +1=Non-Factual) 5 10 15 20 25Method Score (b) LLaMA-30B Avg(H) 0.0 0.2 0.4 0.6 0.8 1.0 Human Score (0=Factual, +1=Non-Factual) 0.0 0.2 0.4 0.6 0.8 1.0Method Score (c) SelfCheckGPT-Prompt Figure 6: Scatter plot of passage-level scores where Y-axis = Method scores, X-axis = Human scores. Correlations are reported in Table 2. The scatter plots of other SelfCheckGPT variants are provided in Figure 10 in the appendix. method outperforms all black-box and grey-box baselines, and its performance is close to the performance of the Prompt method. As SelfCheckGPT with Prompt can be computationally heavy, SelfCheckGPT with NLI could be the most practical method as it provides a good trade-off between performance and computation. 7.2 Passage-level Factuality Ranking Previous results demonstrate that SelfCheckGPT is an effective approach for predicting sentencelevel factuality. An additional consideration is whether SelfCheckGPT can also be used to determine the overall factuality of passages. Passagelevel factuality scores are calculated by averaging the sentence-level scores over all sentences. Spassage = 1 |R| X i S(i) (12) whereS(i) is the sentence-level score, and |R| is the number of sentences in the passage. Since human judgement is somewhat subjective, averaging the sentence-level labels would lead to ground truths with less noise. Note that for Avg(− logp) and Avg(H), we compute the average over all tokens in a passage. Whereas for Max(− logp) and Max(H), we first take the maximum operation over tokens at the sentence level, and we then average over all sentences following Equation 12. Our results in Table 2 and Figure 6 show that all SelfCheckGPT methods correlate far better with human judgements than the other baselines, including the grey-box probability and entropy methods. SelfCheckGPT-Prompt is the best-performing method, achieving the highest Pearson correlation of 78.32. Unsurprisingly, the proxy LLM approach again achieves considerably lower correlations. 7.3 Ablation Studies External Knowledge (instead of SelfCheck) If external knowledge is available, one can measure the informational consistency between the LLM response and the information source. In this experiment, we use the first paragraph of each concept that is available in WikiBio.6 Method Sent-lvl AUC-PR Passage-lvl NoFac NoFac* Fact Pear. Spear. SelfCk-BERT 81.96 45.96 44.23 58.18 55.90 WikiBio+BERT 81.32 40.62 49.15 58.71 55.80 SelfCk-QA 84.26 40.06 48.14 61.07 59.29 WikiBio+QA"
+      },
+      {
+        "chunk_id": "2303.08896v3_p13_c0",
+        "filename": "2303.08896v3.pdf",
+        "page_number": 13,
+        "chunk_number": 0,
+        "similarity": 0.4111589789390564,
+        "text": "N′ m = X n s.t. an∈Lm αn; N′ n = X n s.t. an∈Ln αn (20) whereαn =PU(answerable|q,S n). Therefore, the SelfCheckGPT with QA score,SQA, is: SQA =P (F|Lm,L n) = γN′ n 2 γN′m 1 +γN′n 2 (21) In Table 5, we show empically that applying Bayes’ theorem and soft countingα (in Equation 20) improves the performance of the SelfCheckGPT with QA method. Varaint Sentence-lvl Passage-lvl NoF NoF* Fact PCC SCC SimpleCount 83.97 40.07 47.78 57.39 55.15 + Bayes 83.04 38.58 47.41 56.43 55.03 + Bayes +α 84.26 40.06 48.14 61.07 59.29 Table 5: Performance of SelfCheckGPT-QA’s variants. C SelfCheckGPT with Prompt We use the prompt template provided in the main text (in Section 5.5) for both GPT-3 (text-davinci003) and ChatGPT (gpt-3.5-turbo). For ChatGPT, a standard system message \"You are a helpful assistant.\" is used in setting up the system. At the time of conducting experiments, the API costs per 1,000 tokens are $0.020 for GPT-3 and $0.002 for ChatGPT. The estimated costs for running the models to answer Yes/No on all 1908 sentences and 20 samples are around $200 for GPT-3 and $20 for ChatGPT. Given the cost, we conduct the experiments on 4 samples when performing the ablation about LLM choice for SelfCheckGPTPrompt (Section 7.3). Table 6 shows the breakdown of predictions made by GPT-3 and ChatGPT. GPT-3 ChatGPT Yes No Yes 3179 1038 No 367 3048 Table 6: Breakdown of predictions made by GPT-3/ChatGPT when prompted to answer Yes(supported)/No(not-supported). D Additional Experimental Results Here, we provide experimental results that are complementary to those presented in the main paper. n-gram Sent-lvl AUC-PR Passage-lvl NoFac NoFac* Fact Pear. Spear. Avg(−logp) 1-gram 81.52 40.33 41.76 40.68 39.22 2-gram 82.94 44.38 52.81 58.84 58.11 3-gram 83.56 44.64 53.99 62.21 63.00 4-gram 83.80 43.55 54.25 61.98 63.64 5-gram 83.45 42.31 53.98 60.68 62.96 Max(−logp) 1-gram 85.63 41.04 58.47 64.71 64.91 2-gram 85.26 39.29 58.29 62.48 66.04 3-gram 84.97 37.10 57.08 57.34 60.49 4-gram 84.49 36.37 55.96 55.77 57.25 5-gram 84.12 36.19 54.89 54.84 55.97 Table 7: The performance using differentn-gram models in the SelfCheckGPT withn-gram method. 0 2 4 6 8 10 12 14 16 18 20 Num. samples 77.5 80.0 82.5 85.0 87.5 90.0 92.5AUC-PR SelfCk-BERTScore SelfCk-QA SelfCk-Unigram SelfCk-NLI SelfCk-Prompt Figure 8: The performance of SelfCheckGPT methods on sentence-level non-factual detection (AUC-PR) versus the number of samples. This Figure extends the passage-level results in Figure 7. 125m1.3B 6B 13B"
+      },
+      {
+        "chunk_id": "2305.14251v2_p19_c0",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 19,
+        "chunk_number": 0,
+        "similarity": 0.4077608585357666,
+        "text": "Evaluator LMSUBJ InstGPT ChatGPT PPLAI AlwaysSupported 30.8 37.1 45.0 AlwaysNot-supported 35.7 29.1 15.5 Random 50.5 50.2 43.2 QA Prompting No-context LM 56.5 48.8 32.5 Self-check LM 65.3 63.2 Retrieve→LM 65.3 58.2 47.3 TF Prompting No-context LM 57.3 55.3 41.7 Self-check LM 68.0 61.9 Retrieve→LM 78.9 71.4 69.2 Table 11: Results on F1MICRO , comparing between theQA prompting and TF Prompting. We use Inst-LLAMA 7B as an LMEVAL. Self-check is not applicable to PerplexityAI since PerplexityAI outputs are semi-deterministic. Bold indicates the best F1MICRO . Retrieval LMSUBJ InstGPT ChatGPT PPLAI BM25 78.5 70.8 69.1 GTR Large 78.9 71.4 69.2 GTR xLarge 79.2 71.3 69.0 Table 12: Results on F1 MICRO , comparing different retrieval systems: BM25, GTR Large and GTR xLarge, all with Retrieve→LM based on Inst-LLAMA 7B. Bold indicates the best F1MICRO . and the predicted answer. This approach has been widely studied in the summarization literature and recent work in factual precision (Kryscinski et al., 2020; Wang et al., 2020; Gao et al., 2022; Manakul et al., 2023). Table 11 provides a comparison between two types of prompting. The TF approach significantly outperforms theQA approach, consistently over all methods. Our further analysis finds that this is due to generated questions often being overly vague or ambiguous. For instance, given a supported fact Samuel Oboh is an architect , the LM generates What is Samuel Oboh’s job? as a question and Architect as an expected answer, and the obtained answer isVice President. Although both Architect and Vice President are correct, they are not the same, thus the model incorrectly predicts Not-supported. Such cases make the model overpredictNot-supported, leading to many incorrect predictions. Impact of the choice of retrieval. Table 12 compares Retrieve→LM methods based on a few passage retrieval systems, including BM25 (Lin et al., 2021), GTR Large and GTR xLarge. Results indiCategory % No direct evidence from retrieved passages 70 Distracted by other passages 17 Atomic fact is context-dependent 7 Wrong prediction even with the right passage 3 Annotation error 3 Table 13: Categorization of 30 samples incorrectly predicted by Retrieve→LM based on ChatGPT. cate that all retrieval systems are equally good and Retrieve→LM is not sensitive to the choice of the retrieval system. Qualitative analysis. Table 13 categories errors made by Retrieve→LM based on ChatGPT, the evaluator with the best F1MICRO . 70% of the errors are due to retrieved passages not providing direct evidence (either support or"
+      }
+    ]
+  },
+  {
+    "id": "Q4",
+    "question": "What is the main idea of FactScore?",
+    "question_type": "single_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2305.14251v2.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.4969877600669861,
+    "evidence_sufficient": false,
+    "status": "REFUSED",
+    "answer": "I do not have enough evidence in the provided research corpus to answer this question reliably.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2305.14251v2_p10_c0",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 10,
+        "chunk_number": 0,
+        "similarity": 0.4969877600669861,
+        "text": "leave further study for future work. Due to the assumptions made in Section 3.1, FACTSCORE is not applicable when the facts are more nuanced, open-ended, and debatable (Chen et al., 2019; Xu et al., 2023) or with a knowledge source whose text frequently conflicts with each other (Wadden et al., 2022). Moreover, FACTSCORE may not be suitable for the humanwritten text that is nuanced and includes intentional or implicit deception. Limitation in our estimator. While our estimator closely approximates humans and provides consistent ranking over a large set of LMs, it is not perfect in individual judgments, and the best variant depends on the degree of how close a generation is to human-written text and its linguistic complexity. Future work can investigate how the distribution of model generation affects the performance of the estimator and further improve the estimator. Beyond factual precision. FACTSCORE focuses on factual precision—whether each piece of information in a generation is factually supported by a reliable source of knowledge—which is only one aspect of the broader factuality problem. For instance, FACTSCORE does not consider factual recall: the coverage of information in a generation. FACTSCORE does not penalize a model that abstains from responding too frequently or generates fewer facts, which can be unfair since there is an inherent trade-off between precision and recall. Moreover, the boundary between precision and recall is often blurry, e.g., it is possible that, even if every piece of information in a generation is supported, it misses a significant piece of information that should have been mentioned in order to be considered as correctly responding to the input prompt (example in Table 6). We leave a more holistic evaluation of factuality for future work, and recommend reporting FACTSCORE together with the % of abstention and the average number of atomic facts (as we did in Section 4.3). Acknowledgement We thank Yizhong Wang for sharing Instructiontuned LLAMA and Alpaca models with varying sizes, and for sharing feedback on theFACTSCORE Python package. We thank experts in Upwork for annotating the data, and Dhruba Ghosh, Jiacheng Liu and Zeqiu Wu for participating in pilot annotation and sharing feedback. We thank Akari Prompt: Tell me a bio of Mary I of England. Generation: Mary I was Queen of England and Ireland from July 1553 until her death. Mary was the daughter of King Henry VIII and his first wife, Catherine of Aragon. After her father annulled"
+      },
+      {
+        "chunk_id": "2305.14251v2_p1_c2",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 1,
+        "chunk_number": 2,
+        "similarity": 0.45505741238594055,
+        "text": "introduce FACTSCORE (Factual precision in Atomicity Score), a new evaluation of an LM that represents the percentage of atomic facts (pieces of information) supported by a given knowledge source. Computing FACTSCORE involves (1) breaking a generation into a series of atomic facts—short statements that each contain one piece of information (Nenkova and Passonneau, 2004; Shapira et al., 2019; Zhang and Bansal, 2021; Liu et al., 2022), and (2) assigning a binary label 2Even a single sentence consists of multiple pieces of information (e.g., 4.4 per sentence in ChatGPT, 40% of which are a mixture of supported and unsupported information). arXiv:2305.14251v2 [cs.CL] 11 Oct 2023"
+      },
+      {
+        "chunk_id": "2305.14251v2_p3_c2",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 3,
+        "chunk_number": 2,
+        "similarity": 0.43548867106437683,
+        "text": "FACTSCORE considers precision but not recall, e.g., a model that abstains from answering too often or generates text with fewer facts may have a higher FACTSCORE , even if these are not desired. We leave the evaluation of factual recall for future work (more discussion in the Limitation section). 3.2 Studied LMs We evaluate three LMs (referred to as LM SUBJ , an LM as a subject): (1) InstructGPT (text-davinci-003, updated from Ouyang et al."
+      },
+      {
+        "chunk_id": "2305.14251v2_p9_c1",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.42856577038764954,
+        "text": "down into a series of atomic facts and computes a fraction of facts supported by a given knowledge source. We first performed extensive human evaluation, finding that commercial, state-the-art-art LMs— InstructGPT, ChatGPT, and search engine augmented, PerplexityAI—make a substantial amount of errors, e.g., having a FACTSCORE of 58% in the case of ChatGPT. Since human evaluation is time-consuming and costly, we proposed a model that estimates FACTSCORE , allowing an automatic evaluation of FACTSCORE . We found our estimator based on retrieval over a knowledge source and competitive language models estimates FACTSCORE close to the ground truth, and showcased its application by evaluating 12 recentlyreleased LMs that could have cost $65K if evaluated by humans and providing insights about them. Within four months since its initial release, FACTSCORE has actively been used in subsequent work, evaluating factual precision of recentlyproposed models (Ye et al., 2023; Sun et al., 2023; Malaviya et al., 2023; Dhuliawala et al., 2023). As future work, we suggest: (1) considering other aspects of factuality such as recall (coverage of factual information); (2) further improving the estimator for a better approximation of factual precision; and (3) leveraging FACTSCORE to correct model generations (briefly explored in Appendix C). Limitations Scope of FACTSCORE . All of our experiments focus on people biographies and Wikipedia, because many LMs can generate biographies with objective and specific facts (rather than subjective and vague ones) and Wikipedia has a high coverage for them. FACTSCORE can be applied to a broader domain, e.g., text about recent events whose knowledge source can be a collection of news articles, or text about scientific findings whose knowledge source can be a collection of scientific literature. We present a proof of concept in Appendix B.5 and"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.1088_p3_c2",
+        "filename": "2024.emnlp-main.1088.pdf",
+        "page_number": 3,
+        "chunk_number": 2,
+        "similarity": 0.4164925813674927,
+        "text": "statements in a document is used to reflect the factual status of a response (refer to FactScore). The averaged Factscore over a dataset is in turn used to assess a model’s factuality accuracy. However, there is no guarantee that automatic fact-checkers are 100% accurate in their verification process. (Wang et al., 2023c) show that even the state-of-the-art verifier, equipped with GPT-4 and supporting evidence retrieved with Google search, can only achieve an F1 score of 0.63 in identifying false claims and F1=0.53 using PerplexityAI (compared with human-annotated labels for claims: true or false). Summary: We categorize datasets that evaluate LLM factuality into four types, depending on the answer space and the difficulty degree on which accurate automatic quantification can be performed (see Table 2). They are: (I) open-domain, freeform, long-term responses (FactScore: the percentage of the correct claims verified by human or au19521"
+      }
+    ]
+  },
+  {
+    "id": "Q5",
+    "question": "What are some major categories of hallucination discussed in research on large language models?",
+    "question_type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2311.05232v2.pdf",
+      "2024.emnlp-main.1088.pdf",
+      "2025.cl-4.9.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.8013538718223572,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "Anthropic. 2023. Claude. https://claude.ai/ [9] Antropic. 2024. Claude 3 haiku: our fastest model yet. 2024. https://www.anthropic.com/news/claude-3-haiku [10] ArXiv. 2023. arxiv dataset. https://www.kaggle.com/datasets/Cornell-University/arxiv/versions/134 [11]",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2024.emnlp-main.375_p14_c2",
+        "filename": "2024.emnlp-main.375.pdf",
+        "page_number": 14,
+        "chunk_number": 2,
+        "similarity": 0.8013538718223572,
+        "text": "Swagata Chakraborty, Agnibh Pathak, Anubhav Sarkar, SM Tonmoy, Aman Chadha, Amit P Sheth, and Amitava Das. 2023a. The troubling emergence of hallucination in large language models–an extensive definition, quantification, and prescriptive remediations. arXiv preprint arXiv:2310.04988. 6541"
+      },
+      {
+        "chunk_id": "2311.05232v2_p35_c0",
+        "filename": "2311.05232v2.pdf",
+        "page_number": 35,
+        "chunk_number": 0,
+        "similarity": 0.7438210248947144,
+        "text": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions 1:35 Anders Andreassen, Tamara von Glehn, Lakshman Yagati, Mehran Kazemi, Lucas Gonzalez, Misha Khalman, Jakub Sygnowski, and et al. 2023. Gemini: A Family of Highly Capable Multimodal Models. CoRR abs/2312.11805 (2023). https://doi.org/10.48550/ARXIV.2312.11805 arXiv:2312.11805 [8] Anthropic. 2023. Claude. https://claude.ai/ [9] Antropic. 2024. Claude 3 haiku: our fastest model yet. 2024. https://www.anthropic.com/news/claude-3-haiku [10] ArXiv. 2023. arxiv dataset. https://www.kaggle.com/datasets/Cornell-University/arxiv/versions/134 [11] Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. 2023. Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection. CoRR abs/2310.11511 (2023). https://doi.org/10.48550/ARXIV.2310. 11511 arXiv:2310.11511 [12] Akari Asai, Zexuan Zhong, Danqi Chen, Pang Wei Koh, Luke Zettlemoyer, Hannaneh Hajishirzi, and Wen-tau Yih. 2024. Reliable, Adaptable, and Attributable Language Models with Retrieval. CoRR abs/2403.03187 (2024). https://doi.org/10.48550/ARXIV.2403.03187 arXiv:2403.03187 [13] Amos Azaria and Tom M. Mitchell. 2023. The Internal State of an LLM Knows When its Lying. ArXiv preprint abs/2304.13734 (2023). https://arxiv.org/abs/2304.13734 [14] Jinheon Baek, Alham Fikri Aji, and Amir Saffari. 2023. Knowledge-Augmented Language Model Prompting for ZeroShot Knowledge Graph Question Answering. ArXiv preprint abs/2306.04136 (2023). https://arxiv.org/abs/2306.04136 [15] Yejin Bang, Samuel Cahyawijaya, Nayeon Lee, Wenliang Dai, Dan Su, Bryan Wilie, Holy Lovenia, Ziwei Ji, Tiezheng Yu, Willy Chung, Quyet V. Do, Yan Xu, and Pascale Fung. 2023. A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity. ArXiv preprint abs/2302.04023 (2023). https://arxiv.org/abs/ 2302.04023 [16] Scott Barnett, Stefanus Kurniawan, Srikanth Thudumu, Zach Brannelly, and Mohamed Abdelrazek. 2024. Seven Failure Points When Engineering a Retrieval Augmented Generation System. CoRR abs/2401.05856 (2024). https: //doi.org/10.48550/ARXIV.2401.05856 arXiv:2401.05856 [17] Mario Barrantes, Benedikt Herudek, and Richard Wang. 2020. Adversarial nli for factual correctness in text summarisation models. ArXiv preprint abs/2005.11739 (2020). https://arxiv.org/abs/2005.11739 [18] Pierre Basso. 1993. Conditional Causal Logic: A Formal Theory of the Meaning Generating Processes in a Cognitive System. In Proceedings of the 13th International Joint Conference on Artificial Intelligence. Chambéry, France, August 28 September 3, 1993, Ruzena Bajcsy (Ed.). Morgan Kaufmann, 845–851. http://ijcai.org/Proceedings/93-2/Papers/002.pdf [19] Iz Beltagy, Matthew E. Peters, and Arman Cohan. 2020. Longformer: The Long-Document Transformer. ArXiv preprint abs/2004.05150 (2020). https://arxiv.org/abs/2004.05150 [20] Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?. In FAccT ’21: 2021 ACM Conference on Fairness, Accountability, and Transparency, Virtual Event / Toronto, Canada, March 3-10, 2021 , Madeleine Clare Elish, William Isaac, and Richard S. Zemel (Eds.). ACM, 610–623. https://doi.org/10.1145/3442188.3445922 [21] Samy Bengio,"
+      },
+      {
+        "chunk_id": "2311.05232v2_p57_c0",
+        "filename": "2311.05232v2.pdf",
+        "page_number": 57,
+        "chunk_number": 0,
+        "similarity": 0.7356392741203308,
+        "text": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions 1:57 [376] Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting Huang, Enbo Zhao, Yu Zhang, Yulong Chen, Longyue Wang, Anh Tuan Luu, Wei Bi, Freda Shi, and Shuming Shi. 2023. Siren’s Song in the AI Ocean: A Survey on Hallucination in Large Language Models. ArXiv preprint abs/2309.01219 (2023). https://arxiv.org/abs/2309.01219 [377] Zhenyu Zhang, Runjin Chen, Shiwei Liu, Zhewei Yao, Olatunji Ruwase, Beidi Chen, Xiaoxia Wu, and Zhangyang Wang. 2024. Found in the Middle: How Language Models Use Long Contexts Better via Plug-and-Play Positional Encoding. arXiv:2403.04797 [cs.CL] [378] Zihan Zhang, Meng Fang, and Ling Chen. 2024. RetrievalQA: Assessing Adaptive Retrieval-Augmented Generation for Short-form Open-Domain Question Answering. arXiv:2402.16457 [cs.CL] [379] Linxi Zhao, Yihe Deng, Weitong Zhang, and Quanquan Gu. 2024. Mitigating Object Hallucination in Large VisionLanguage Models via Classifier-Free Guidance. arXiv preprint arXiv:2402.08680 (2024). [380] Liang Zhao, Xiaocheng Feng, Xiachong Feng, Bing Qin, and Ting Liu. 2023. Length Extrapolation of Transformers: A Survey from the Perspective of Position Encoding. CoRR abs/2312.17044 (2023). https://doi.org/10.48550/ARXIV.2312. 17044 arXiv:2312.17044 [381] Ruochen Zhao, Xingxuan Li, Shafiq Joty, Chengwei Qin, and Lidong Bing. 2023. Verify-and-Edit: A KnowledgeEnhanced Chain-of-Thought Framework. InProceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2023, Toronto, Canada, July 9-14, 2023, Anna Rogers, Jordan L. Boyd-Graber, and Naoaki Okazaki (Eds.). Association for Computational Linguistics, 5823–5840. https://doi.org/10.18653/v1/2023.acllong.320 [382] Wayne Xin Zhao, Jing Liu, Ruiyang Ren, and Ji-Rong Wen. 2024. Dense text retrieval based on pretrained language models: A survey. ACM Transactions on Information Systems 42, 4 (2024), 1–60. [383] Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, et al . 2023. A survey of large language models. ArXiv preprint abs/2303.18223 (2023). https://arxiv.org/abs/2303.18223 [384] Yukun Zhao, Lingyong Yan, Weiwei Sun, Guoliang Xing, Chong Meng, Shuaiqiang Wang, Zhicong Cheng, Zhaochun Ren, and Dawei Yin. 2023. Knowing What LLMs DO NOT Know: A Simple Yet Effective Self-Detection Method. ArXiv preprint abs/2310.17918 (2023). https://arxiv.org/abs/2310.17918 [385] Danna Zheng, Mirella Lapata, and Jeff Z. Pan. 2024. Large Language Models as Reliable Knowledge Bases? arXiv:2407.13578 [cs.CL] https://arxiv.org/abs/2407.13578 [386] Shen Zheng, Jie Huang, and Kevin Chen-Chuan Chang. 2023. Why Does ChatGPT Fall Short in Answering Questions Faithfully? ArXiv preprint abs/2304.10513 (2023). https://arxiv.org/abs/2304.10513 [387] Weihong Zhong, Mao Zheng, Duyu Tang, Xuan Luo, Heng Gong, Xiaocheng Feng,"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.375_p4_c2",
+        "filename": "2024.emnlp-main.375.pdf",
+        "page_number": 4,
+        "chunk_number": 2,
+        "similarity": 0.7173921465873718,
+        "text": "is inherently a shared vocabulary within these domains. Unfortunately, out of the 103 works examined, only 3 acknowledge the this nature of hallucination, with none utilizing this framework to inform their approach. 6531"
+      },
+      {
+        "chunk_id": "2025.cl-4.9_p3_c1",
+        "filename": "2025.cl-4.9.pdf",
+        "page_number": 3,
+        "chunk_number": 1,
+        "similarity": 0.7097033858299255,
+        "text": "of LLM We begin this section by overviewing the history of LLMs (§2.1). Next, we present our deﬁnition of LLM hallucination, by breaking it down into three sub-categories (§2.2). In addition, we discuss the unique challenges of hallucination in LLMs (§2.3), and compare hallucination with other prevalent problems that are frequently encountered in the realm of LLMs (§2.4). 2.1 Large Language Models An important category of LLMs is autoregressive language models (Radford et al. 2019; Chowdhery et al. 2022; Touvron et al. 2023a). These models take Transformers (Vaswani 1375"
+      }
+    ]
+  },
+  {
+    "id": "Q6",
+    "question": "What approaches have researchers proposed for evaluating factuality or factual consistency in generated text?",
+    "question_type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "1910.12840v1.pdf",
+      "2112.08542v2.pdf",
+      "2204.04991v3.pdf",
+      "2305.16739v1.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.7072283029556274,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "meta-evaluation",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2204.04991v3_p1_c0",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 1,
+        "chunk_number": 0,
+        "similarity": 0.7072283029556274,
+        "text": "TRUE: Re-evaluating Factual Consistency Evaluation Or HonovichT ∗ Roee AharoniG Jonathan HerzigG Hagai TaitelbaumG Vered CohenG Doron KuklianskyG Thomas ScialomM Idan SzpektorG Avinatan HassidimG Yossi MatiasG T Tel Aviv University GGoogle Research MMeta AI Tel Aviv, Israel Paris, France or.honovich@gmail.com {roeeaharoni,szpektor}@google.com Abstract Grounded text generation systems often generate text that contains factual inconsistencies, hindering their real-world applicability. Automatic factual consistency evaluation may help alleviate this limitation by accelerating evaluation cycles, ﬁltering inconsistent outputs and augmenting training data. While attracting increasing attention, such evaluation metrics are usually developed and evaluated in silo for a single task or dataset, slowing their adoption. Moreover, previous meta-evaluation protocols focused on system-level correlations with human annotations, which leave the examplelevel accuracy of such metrics unclear. In this work, we introduce TRUE: a comprehensive survey and assessment of factual consistency metrics on a standardized collection of existing texts from diverse tasks, manually annotated for factual consistency. Our standardization enables an example-level metaevaluation protocol that is more actionable and interpretable than previously reported correlations, yielding clearer quality measures. Across diverse state-of-the-art metrics and 11 datasets we ﬁnd that large-scale NLI and question generation-and-answering-based approaches achieve strong and complementary results. We recommend those methods as a starting point for model and metric developers, and hope TRUE will foster progress towards even better evaluation methods.1 1 Introduction A core issue in deploying text generation models for real-world applications is that they often generate factually inconsistent text with respect to the input they are conditioned on, or even completely “hallucinate” (Lee et al., 2018; Rohrbach et al., 2018; Maynez et al., 2020; Zhao et al., 2020) as exempliﬁed in Table 1. ∗ Work done during an internship at Google Research. 1Our code is publicly available at http://www. github.com/google-research/true Summarization (Wang et al., 2020) Input Phyllis schlaﬂy, a leading ﬁgure in the us conservative movement, has died at her home in missouri, aged 92... Summary Us conservative activist phyllis schlaﬂy has died at the age of 87. Fact Veriﬁcation (Thorne et al., 2018) Evidence Ronald Bilius “Ron” Weasley is a character in J. K. Rowling’s Harry Potter ﬁctional series. Claim Ron Weasley is a President. Paraphrasing (Zhang et al., 2019) Input The tracks were produced by Tommy Lee, and feature Michael Beinhorn on drums. Paraphrase The tracks were produced by Michael Beinhorn and have Tommy Lee on drums. Knowledge-Grounded Dialogue (Honovich et al., 2021) Knowledge The ﬁrst ﬂip trick called a"
+      },
+      {
+        "chunk_id": "2204.04991v3_p9_c1",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.6886711716651917,
+        "text": "not the factual consistency evaluation methods as in TRUE. BEAMetrics (Scialom and Hill, 2021) proposes meta-evaluation protocols across tasks, but does not focus on factual consistency. When discussing consistency (“correctness”) they measure correlations, which are not sufﬁcient as mentioned in Section 2.3. Chen et al. (2021) present an adversarial meta-evaluation for factual consistency evaluators, focused on summarization. Other works on meta-evaluation of factual consistency across datasets include GO-FIGURE (Gabriel et al., 2021) FRANK (Pagnoni et al., 2021) SummaC (Laban et al., 2021) and QAFactEval (Fabbri et al., 2021b), however they all focus solely on summarization. Yeh et al. (2021) conduct a thorough assessment of dialog metrics, however not speciﬁcally around factual consistency. To the best of our knowledge, our work is the ﬁrst to generalize the discussion on evaluating factual consistency across tasks and datasets, and the ﬁrst to show that large-scale QG-QA and NLI are strong and highly complementary – setting better baselines and metaevaluation methodology for future work. 7 Discussion and Future Work We discuss the main takeaways of the TRUE study, pointing at actionable insights for future work. First, as QG-QA and NLI-based methods show better performance than other approaches, especially when combined together, we recommend model developers to use those methods for evaluation when factual consistency is a priority. As for metric developers, we recommend using those methods and the datasets in TRUE when evaluating new metrics. We also suggest reporting ROC AUC rather than correlations, as it is more interpretable and actionable. Our proposed binary annotation scheme allows to easily test new metrics across tasks and datasets, which would be useful for future work. Finally, we encourage data curators to use the binary annotation scheme, which is inline with the recommendations of Rashkin et al. (2021a). Having said that, we do not rule out more detailed labeling schemes – but rather ask to provide a protocol for converting such labels into the more general binary format. Future work may also address the challenges of long inputs and personal statements in dialogue, which we point out in our analysis. 8 Conclusions We presented TRUE, a survey and assessment of automatic factual consistency evaluation methods. We standardized various datasets from diverse tasks into a uniﬁed labeling scheme to perform a thorough comparison of automatic evaluation methods, showing that large scale NLI and QG-QA based approaches perform well across multiple tasks and datasets. We further show that these"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.1088_p2_c2",
+        "filename": "2024.emnlp-main.1088.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6858744621276855,
+        "text": "model to be factually correct yet still produce hallucinations by generating content that is either off-topic or more detailed than what is requested. Trustworthiness/Reliability vs. Factuality In the context of LLMs, factuality (Wang et al., 2023b) refers to a model’s capability of generating contents of factual information, grouneded in reliable sources (e.g., dictionaries, Wikipedia or textbooks), with commonsense, world and domain-specific knowledge taken into account. In contrast, “trustworthiness” (Sun et al., 2024) extends beyond mere factual accuracy and is measured on eight dimensions: truthfulness, safety, fairness, robustness, privacy, ethics, transparency, and accountability. 3 Evaluating Factuality Evaluating LLM factuality on open-ended generations presents a non-trivial challenge, discerning the degree to which a generated textual statement aligns with objective reality. Studies employ vari19520"
+      },
+      {
+        "chunk_id": "2204.04991v3_p9_c2",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 9,
+        "chunk_number": 2,
+        "similarity": 0.6794379949569702,
+        "text": "format. Future work may also address the challenges of long inputs and personal statements in dialogue, which we point out in our analysis. 8 Conclusions We presented TRUE, a survey and assessment of automatic factual consistency evaluation methods. We standardized various datasets from diverse tasks into a uniﬁed labeling scheme to perform a thorough comparison of automatic evaluation methods, showing that large scale NLI and QG-QA based approaches perform well across multiple tasks and datasets. We further show that these methods are highly complementary – hinting at additional headroom for improvement while pointing on current limitations. We hope our results and methodology will encourage a more uniﬁed perspective in future work to foster progress towards more factuallyconsistent NLP applications. Acknowledgements We thank Dipanjan Das, Sebastian Gehrmann and Joshua Maynez for their valuable comments and suggestions for this work."
+      },
+      {
+        "chunk_id": "2204.04991v3_p2_c2",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6550702452659607,
+        "text": "inconsistent correct text (Maynez et al., 2020), we take a strict approach, requiring the text to be faithful to its grounding text, regardless of the “correctness” w.r.t the “real world”. In other words, we consider only the information present in the input text, not external knowledge, to assess faithfulness. This enables a more well-deﬁned task, since determining the truthfulness of a fact w.r.t a 4We conduct signiﬁcance testing, see section 4. 5We exclude personal and social statements such as opinions and chit-chat from the scope of factual information."
+      }
+    ]
+  },
+  {
+    "id": "Q7",
+    "question": "What are some approaches for detecting hallucinations without relying only on direct human evaluation?",
+    "question_type": "multi_paper",
+    "answerable": true,
+    "expected_sources": [
+      "2303.08896v3.pdf",
+      "2406.15927v1.pdf",
+      "s41586-024-07421-0.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.766539990901947,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "HaluEval",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2410.13210v1_p2_c2",
+        "filename": "2410.13210v1.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.766539990901947,
+        "text": "by consensus of detectors Human annotation of obvious hallucinations is of limited value, as they can be easily detected by automatic systems; the real value lies in annotating challenging samples where popular detection models disagree. This will provide a valuable calibration for the community, highlighting areas where detectors struggle and guiding future improvements."
+      },
+      {
+        "chunk_id": "2305.11747v3_p8_c2",
+        "filename": "2305.11747v3.pdf",
+        "page_number": 8,
+        "chunk_number": 2,
+        "similarity": 0.6998497247695923,
+        "text": "HaluEval benchmark includes general user queries and ChatGPT responses and proposes a two-step automatic process to generate hallucinated samples for evaluation, which is completely based on LLMs. 5 Conclusion We introduce HaluEval, a large-scale collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing hallucinations. To automatically generate large-scale samples, we propose a two-step"
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p3_c2",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 3,
+        "chunk_number": 2,
+        "similarity": 0.682417631149292,
+        "text": "93.9% for biomedicine, finance, science, education, and open domain, respectively. The high consistency demonstrates that our proposed method has a high level of reliability in detecting the hallucinations from LLMs. Evaluation Metrics. In order to quantitatively evaluate LLMs on HaluEval 2.0, we design two metrics from different levels to measure the degree of 10881"
+      },
+      {
+        "chunk_id": "2406.15927v1_p2_c2",
+        "filename": "2406.15927v1.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6703158617019653,
+        "text": "layers, and token positions. Our results strongly suggest internal model states across layers and tokens implicitly capture semantic uncertainty, even before generating any tokens. (Section 6) • We show that SEPs can be used to predict hallucinations and that they generalize better than probes directly trained for accuracy as suggested by previous work, establishing a new state-of-the-art for cost-efficient hallucination detection (Section 7, Fig. 1). 2"
+      },
+      {
+        "chunk_id": "2311.05232v2_p3_c1",
+        "filename": "2311.05232v2.pdf",
+        "page_number": 3,
+        "chunk_number": 1,
+        "similarity": 0.6596376299858093,
+        "text": "more comprehensive analysis of the causes of hallucinations. Crucially, our proposed mitigation strategies are directly tied to these causes, offering a targeted and coherent framework for addressing LLM hallucinations. Organization of this Survey. In this survey, we present a comprehensive overview of the latest developments in LLM hallucinations, as shown in Fig 1. We commence by constructing a taxonomy of hallucinations in the realm of LLM (§2). Subsequently, we analyze factors contributing to LLM hallucinations in depth (§3), followed by a review of various strategies and benchmarks employed for the reliable detection of hallucinations in LLMs (§4). We then detail a spectrum of approaches designed to mitigate these hallucinations (§5). Concluding, we delve into the challenges faced by current RAG systems (§6) and delineate potential pathways for forthcoming research (§7). 2 DEFINITIONS For the sake of a comprehensive understanding of hallucinations in LLMs, we commence with a succinct introduction to LLMs (§2.1), delineating the scope of this survey. Subsequently, we delve into the training stages of LLMs (§2.2), as a thorough understanding of the training mechanisms contributes significantly to elucidating the origins of hallucinations. Lastly, we expound upon the concept of hallucinations in LLMs (§2.3), further categorizing it into two distinct types. 2.1 Large Language Models Before delving into the causes of hallucination, we first introduce the concept of LLMs. Typically, LLMs refer to a series of general-purpose models that leverage the transformer-based language model architecture and undergo extensive training on massive textual corpora with notable examples including GPT-3 [29], PaLM [54], LLaMA [300], GPT-4 [232] and Gemini [259]. By scaling the amount of data and model capacity, LLMs raise amazing emergent abilities, typically including in-context learning (ICL) [29], chain-of-thought prompting [326] and instruction following [244]. ACM Transactions on Information Systems, Vol. 1, No. 1, Article 1. Publication date: January 2024."
+      }
+    ]
+  },
+  {
+    "id": "Q8",
+    "question": "How does SelfCheckGPT differ from semantic entropy approaches to hallucination detection?",
+    "question_type": "comparison",
+    "answerable": true,
+    "expected_sources": [
+      "2303.08896v3.pdf",
+      "2406.15927v1.pdf",
+      "s41586-024-07421-0.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.6353955864906311,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "SelfCheckGPT is a sampling-based approach that can detect whether responses generated by LLMs are hallucinated or factual.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2406.15927v1_p2_c2",
+        "filename": "2406.15927v1.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6353955864906311,
+        "text": "layers, and token positions. Our results strongly suggest internal model states across layers and tokens implicitly capture semantic uncertainty, even before generating any tokens. (Section 6) • We show that SEPs can be used to predict hallucinations and that they generalize better than probes directly trained for accuracy as suggested by previous work, establishing a new state-of-the-art for cost-efficient hallucination detection (Section 7, Fig. 1). 2"
+      },
+      {
+        "chunk_id": "2303.08896v3_p2_c0",
+        "filename": "2303.08896v3.pdf",
+        "page_number": 2,
+        "chunk_number": 0,
+        "similarity": 0.6085509061813354,
+        "text": "ally, hallucinations are observed over a wide range of tasks beyond pure fact verification (Kryscinski et al., 2020; Maynez et al., 2020). In this paper, we propose SelfCheckGPT, a sampling-based approach that can detect whether responses generated by LLMs are hallucinated or factual. To the best of our knowledge, SelfCheckGPT is the first work to analyze model hallucination of general LLM responses, and is the first zero-resource hallucination detection solution that can be applied to black-box systems. The motivating idea of SelfCheckGPT is that when an LLM has been trained on a given concept, the sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and may contradict one another. By sampling multiple responses from an LLM, one can measure information consistency between the different responses and determine if statements are factual or hallucinated. Since SelfCheckGPT only leverages sampled responses, it has the added benefit that it can be used for black-box models, and it requires no external database. Five variants of SelfCheckGPT for measuring informational consistency are considered: BERTScore, question-answering,n-gram, NLI, and LLM prompting. Through analysis of annotated articles generated by GPT-3, we show that SelfCheckGPT is a highly effective hallucination detection method that can even outperform greybox methods, and serves as a strong first baseline for an increasingly important problem of LLMs. 2 Background and Related Work 2.1 Hallucination of Large Language Models Hallucination has been studied in text generation tasks, including summarization (Huang et al., 2021) and dialogue generation (Shuster et al., 2021), as well as in a variety of other natural language generation tasks (Ji et al., 2023). Self-consistency decoding has shown to improve chain-of-thought prompting performance on complex reasoning tasks (Wang et al., 2023). Further, Liu et al. (2022) introduce a hallucination detection dataset, however, texts are obtained by perturbing factual texts and thus may not reflect true LLM hallucination. Recently, Azaria and Mitchell (2023) trained a multi-layer perception classifier where an LLM’s hidden representations are used as inputs to predict the truthfulness of a sentence. However, this approach is a white-box approach that uses the internal states of the LLM, which may not be available through API calls, and requires labelled data for supervised training. Another recent approach is self-evaluation (Kadavath et al., 2022), where an LLM is prompted to evaluate its previous prediction, e.g., to predict the probability that its generated"
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p2_c0",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 2,
+        "chunk_number": 0,
+        "similarity": 0.6026021838188171,
+        "text": "we propose a simple yet effective framework that decomposes the task of hallucination detection into two simple sub-tasks,i.e., extract factual statements from responses and judge the trustfulness of each statement. Then, based on the detection approach, we perform a series of studies to explore the hallucination sources from four aspects, i.e., pre-training, SFT, and inference methods. For each aspect, we extensively examine the effect of possible factors on LLM hallucinations. Finally, we delve into hallucination mitigation for LLMs through a series of widely used techniques, including RLHF, retrieval augmentation, and advanced decoding, etc. It is generally considered to be challenging to deeply understand and fully mitigate LLM hallucinations. By providing more comprehensive empirical analysis, our work aims to further push forward the research on hallucinations. The major findings of our empirical study are summarized below: • Pre-training: Pre-training on more tokens has an oscillatory effect on reducing LLM hallucinations. The familiarity of pre-training knowledge to LLMs significantly influences the source of hallucinations, i.e., lower familiarity, more hallucinations. • Fine-tuning: Supervised fine-tuning LLMs with improved and appropriate instructions can be useful to alleviate hallucinations. RLHF is an effective method to mitigate LLM halluciantions, while this effect relies on specific domains. • Inference: Diversity-oriented decoding contributes to more hallucinations, which foregrounds the importance of balancing diversity and factuality during decoding. Augmenting generation with retrieval can effectively mitigate hallucinations. 2 Hallucination in LLMs In the field of NLP, hallucination typically refers that the model output contains undesired content that is nonsensical or deviates from the source material (Ji et al., 2023a; Zhang et al., 2023b). Despite that hallucination can be defined in different ways, we focus on factuality hallucination, since it has become one of the primary sources of erroneous responses by LLMs. In light of this research, we propose a fine-grained categorization of factuality hallucination in LLMs as follows: • Entity-error Hallucination. This type of hallucination refers to the situations where the generated text of LLMs contains erroneous entities, such as person, date, location, and object, that contradict with the world knowledge. • Relation-error Hallucination. This type of hallucination refers to the generated text of LLMs contains wrong relations between entities such as quantitative and chronological relation. • Incompleteness Hallucination. LLMs might exhibit incomplete output when generating lengthy or listed responses. This hallucination arises when LLMs are asked about aggregated facts and they fail to reserve the factual completeness. • Outdatedness Hallucination."
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p10_c0",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 10,
+        "chunk_number": 0,
+        "similarity": 0.6021077632904053,
+        "text": "9 Limitations Despite the great efforts that we have made, our analysis about pre-training stage and SFT is still limited, due to the lack of disclosed training details and the supporting computational sources. We will investigate into the two stages with more detailed analysis as future work. Furthermore, our experimental tests are not yet sufficient and we are also particularly interested in the working mechanism or nature of LLMs in generating the hallucinations. We will conduct more in-depth research work in the future. In addition, this paper mainly aims to provide empirical analysis on existing techniques to mitigate the LLM hallucinations, and there are no new hallucination mitigation strategies proposed. We will also consider developing improved mitigation strategies based on the findings of this work. Our hallucination detection approach is based on the GPT model ( i.e., GPT-4), which might inevitably lead to some minor errors. We will continuously improve our method in the future work. Acknowledgments This work was partially supported by National Natural Science Foundation of China under Grant No. 62222215, and Beijing Natural Science Foundation under Grant No. L233008 and 4222027. Xin Zhao is the corresponding author. References Ayush Agrawal, Lester Mackey, and Adam Tauman Kalai. 2023. Do language models know when they’re hallucinating references? arXiv preprint arXiv:2305.18248. Ebtesam Almazrouei, Hamza Alobeidli, Abdulaziz Alshamsi, Alessandro Cappelli, Ruxandra Cojocaru, Merouane Debbah, Etienne Goffinet, Daniel Heslow, Julien Launay, Quentin Malartic, Badreddine Noune, Baptiste Pannier, and Guilherme Penedo. 2023. Falcon-40B: an open large language model with state-of-the-art performance. Amos Azaria and Tom Mitchell. 2023a. The internal state of an llm knows when its lying. arXiv preprint arXiv:2304.13734. Amos Azaria and Tom M. Mitchell. 2023b. The internal state of an LLM knows when its lying. CoRR, abs/2304.13734. Sid Black, Stella Biderman, Eric Hallahan, Quentin Anthony, Leo Gao, Laurence Golding, Horace He, Connor Leahy, Kyle McDonell, Jason Phang, Michael Pieler, USVSN Sai Prashanth, Shivanshu Purohit, Laria Reynolds, Jonathan Tow, Ben Wang, and Samuel Weinbach. 2022. Gpt-neox-20b: An open-source autoregressive language model. CoRR, abs/2204.06745. Vera Boteva, Demian Gholipour Ghalandari, Artem Sokolov, and Stefan Riezler. 2016. A full-text learning to rank dataset for medical information retrieval. In Advances in Information Retrieval - 38th European Conference on IR Research, ECIR 2016, Padua, Italy, March 20-23, 2016. Proceedings, volume 9626 of Lecture Notes in Computer Science , pages 716– 722. Springer. Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan,"
+      },
+      {
+        "chunk_id": "2401.00396v2_p7_c1",
+        "filename": "2401.00396v2.pdf",
+        "page_number": 7,
+        "chunk_number": 1,
+        "similarity": 0.5987917184829712,
+        "text": "more challenging and significant task to identify the locations of hallucinations within the response than only determining whether a response contains hallucinations. We assess hallucination detection at both the response and span levels. Response-level Detection We report precision, recall, and F1 score for each detection algorithm and its variants across different tasks. Span-level Detection We calculate the overlap between the detected span and human-labeled span and report the precision, recall, and f1 score at the char-level. 6 Experimental Results 6.1 Response-level Detection The results in Table 5 reveal that hallucination detection remains a significant challenge in the context of RAG for all existing detection methods. Even when reference information is available, the responses generated may still include hallucinations, which current LLMs cannot reliably identify. The most advanced LLM, GPT-4-turbo, achieves only an average F1 score of 63.4%. For another notable baseline, SelfCheckGPT also shows unsatisfactory performance in this regard, achieving an average F1 score of 58.8% with GPT-3.5-turbo. By utilizing our high-quality training set, a finetuned Llama-2-13B can achieve the best performance with an average 78.7% f1 score. This shows the effectiveness of our data in improving the model’s hallucination detection ability. 6.2 Span-level Detection RAGTruth, as a hallucination corpus with finegrained span labels, enables us to present experimental results for span-level detection, serving as a baseline for future research. As shown in Table 6, the overall performance of the current detection method is sub-optimal, highlighting the challenges in span-level detection. Even the advanced GPT-4-turbo tends to incorrectly classify many non-hallucinated contents with a low precision of 18.4%. While our fine-tuned model shows improved capability in identifying hallucinated spans by achieving an averaged f1 score of 52.7%, it still falls short of perfect detection, emphasizing the inherent difficulties of this task. We also report the detection performance across"
+      }
+    ]
+  },
+  {
+    "id": "Q9",
+    "question": "How does FactScore differ from factual consistency evaluation methods developed for abstractive summarization?",
+    "question_type": "comparison",
+    "answerable": true,
+    "expected_sources": [
+      "2305.14251v2.pdf",
+      "1910.12840v1.pdf",
+      "2112.08542v2.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.6726134419441223,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "QG-QA and NLI-based methods show better performance than other approaches, especially when combined together, we recommend model developers to use those methods.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2305.14251v2_p12_c2",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 12,
+        "chunk_number": 2,
+        "similarity": 0.6726134419441223,
+        "text": "Vidhisha Balachandran, and Yulia Tsvetkov. 2021. Understanding factuality in abstractive summarization with FRANK: A benchmark for factuality metrics. In Conference of the North American Chapter of the Association for Computational Linguistics."
+      },
+      {
+        "chunk_id": "2204.04991v3_p9_c1",
+        "filename": "2204.04991v3.pdf",
+        "page_number": 9,
+        "chunk_number": 1,
+        "similarity": 0.6653241515159607,
+        "text": "not the factual consistency evaluation methods as in TRUE. BEAMetrics (Scialom and Hill, 2021) proposes meta-evaluation protocols across tasks, but does not focus on factual consistency. When discussing consistency (“correctness”) they measure correlations, which are not sufﬁcient as mentioned in Section 2.3. Chen et al. (2021) present an adversarial meta-evaluation for factual consistency evaluators, focused on summarization. Other works on meta-evaluation of factual consistency across datasets include GO-FIGURE (Gabriel et al., 2021) FRANK (Pagnoni et al., 2021) SummaC (Laban et al., 2021) and QAFactEval (Fabbri et al., 2021b), however they all focus solely on summarization. Yeh et al. (2021) conduct a thorough assessment of dialog metrics, however not speciﬁcally around factual consistency. To the best of our knowledge, our work is the ﬁrst to generalize the discussion on evaluating factual consistency across tasks and datasets, and the ﬁrst to show that large-scale QG-QA and NLI are strong and highly complementary – setting better baselines and metaevaluation methodology for future work. 7 Discussion and Future Work We discuss the main takeaways of the TRUE study, pointing at actionable insights for future work. First, as QG-QA and NLI-based methods show better performance than other approaches, especially when combined together, we recommend model developers to use those methods for evaluation when factual consistency is a priority. As for metric developers, we recommend using those methods and the datasets in TRUE when evaluating new metrics. We also suggest reporting ROC AUC rather than correlations, as it is more interpretable and actionable. Our proposed binary annotation scheme allows to easily test new metrics across tasks and datasets, which would be useful for future work. Finally, we encourage data curators to use the binary annotation scheme, which is inline with the recommendations of Rashkin et al. (2021a). Having said that, we do not rule out more detailed labeling schemes – but rather ask to provide a protocol for converting such labels into the more general binary format. Future work may also address the challenges of long inputs and personal statements in dialogue, which we point out in our analysis. 8 Conclusions We presented TRUE, a survey and assessment of automatic factual consistency evaluation methods. We standardized various datasets from diverse tasks into a uniﬁed labeling scheme to perform a thorough comparison of automatic evaluation methods, showing that large scale NLI and QG-QA based approaches perform well across multiple tasks and datasets. We further show that these"
+      },
+      {
+        "chunk_id": "2305.14251v2_p10_c0",
+        "filename": "2305.14251v2.pdf",
+        "page_number": 10,
+        "chunk_number": 0,
+        "similarity": 0.6554151177406311,
+        "text": "leave further study for future work. Due to the assumptions made in Section 3.1, FACTSCORE is not applicable when the facts are more nuanced, open-ended, and debatable (Chen et al., 2019; Xu et al., 2023) or with a knowledge source whose text frequently conflicts with each other (Wadden et al., 2022). Moreover, FACTSCORE may not be suitable for the humanwritten text that is nuanced and includes intentional or implicit deception. Limitation in our estimator. While our estimator closely approximates humans and provides consistent ranking over a large set of LMs, it is not perfect in individual judgments, and the best variant depends on the degree of how close a generation is to human-written text and its linguistic complexity. Future work can investigate how the distribution of model generation affects the performance of the estimator and further improve the estimator. Beyond factual precision. FACTSCORE focuses on factual precision—whether each piece of information in a generation is factually supported by a reliable source of knowledge—which is only one aspect of the broader factuality problem. For instance, FACTSCORE does not consider factual recall: the coverage of information in a generation. FACTSCORE does not penalize a model that abstains from responding too frequently or generates fewer facts, which can be unfair since there is an inherent trade-off between precision and recall. Moreover, the boundary between precision and recall is often blurry, e.g., it is possible that, even if every piece of information in a generation is supported, it misses a significant piece of information that should have been mentioned in order to be considered as correctly responding to the input prompt (example in Table 6). We leave a more holistic evaluation of factuality for future work, and recommend reporting FACTSCORE together with the % of abstention and the average number of atomic facts (as we did in Section 4.3). Acknowledgement We thank Yizhong Wang for sharing Instructiontuned LLAMA and Alpaca models with varying sizes, and for sharing feedback on theFACTSCORE Python package. We thank experts in Upwork for annotating the data, and Dhruba Ghosh, Jiacheng Liu and Zeqiu Wu for participating in pilot annotation and sharing feedback. We thank Akari Prompt: Tell me a bio of Mary I of England. Generation: Mary I was Queen of England and Ireland from July 1553 until her death. Mary was the daughter of King Henry VIII and his first wife, Catherine of Aragon. After her father annulled"
+      },
+      {
+        "chunk_id": "2112.08542v2_p3_c0",
+        "filename": "2112.08542v2.pdf",
+        "page_number": 3,
+        "chunk_number": 0,
+        "similarity": 0.6502993702888489,
+        "text": "while Gabriel et al. (2021) propose a framework for meta-evaluation of factual consistency metrics. Laban et al. (2021) propose to combine recent work in factual consistency evaluation for summarization through a single benchmark. Our work directly makes use of this benchmark while emphasizing QA-based metrics. We also include correlation analysis for a more comprehensive understanding of current factual consistency metrics. 3 Evaluation Metrics In this section, we introduce the factual consistency metrics studied, which we divide into entailment metrics, QA-based metrics, and learned metrics. 3.1 Entailment-based Metrics We include the following entailment-based metrics due to further understand differences in granularity and base entailment models. The metrics below produce a score for each summary sentence that is then averaged to compute the ﬁnal metric score. MNLI applies a RoBERTa large (Liu et al., 2019) model trained on MNLI (Williams et al., 2018). The score of a summary sentence is the maximum entailment score over all input sentences. ANLI Barrantes et al. (2020) uses the same method as the MNLI metric with a model trained on the ANLI (Nie et al., 2020) dataset consisting of adversarial datapoints. SCZeroShot Laban et al. (2021) works analogously to the above metrics with a base model trained on both MNLI and Vitamin-C data (Schuster et al., 2021), consisting of closely-related contrastive entailment examples. BertScore-FFCI Koto et al. (2021) applies BertScore (Zhang et al., 2020b) with a backbone RoBERTa-MNLI model, averaging the three highest BertScore F1 scores over the input sentences. DAE Goyal and Durrett (2020) computes entailment scores between a source document and summary dependency arcs, applying an entailment model trained on synthetic data. FactCC Kryscinski et al. (2020) is a RoBERTabase model trained on FactCC synthetic data to compute a document-level score, and thus the scores need not be aggregated over input sentences. DocNLI Yin et al. (2021) train a document-level entailment model, similar to the FactCC metric. 3.2 QA Metric Components We now describe the components that constitute the QA-based pipeline for factual consistency. We refer to our metric, consisting of the best combination of the below components, as QAFACTEVAL. Answer Selection QA-based metrics compare information units between the summary and source, so it is thus necessary to ﬁrst extract such units, or answers, from the given summary. We follow the protocols from Deutsch et al. (2020) and compare extracting the following answer types: named entities (NER), noun phrase chunks (NP Chunks), maximally sized"
+      },
+      {
+        "chunk_id": "2112.08542v2_p10_c2",
+        "filename": "2112.08542v2.pdf",
+        "page_number": 10,
+        "chunk_number": 2,
+        "similarity": 0.6406058073043823,
+        "text": "Kong, China. Association for Computational Linguistics. Wojciech Kryscinski, Bryan McCann, Caiming Xiong, and Richard Socher. 2020. Evaluating the factual consistency of abstractive text summarization. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP),"
+      }
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "What does the corpus say about the best prompting strategy for predicting tomorrow's stock-market closing price?",
+    "question_type": "unanswerable",
+    "answerable": false,
+    "expected_sources": [],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.36979377269744873,
+    "evidence_sufficient": false,
+    "status": "REFUSED",
+    "answer": "I do not have enough evidence in the provided research corpus to answer this question reliably.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2307.13528v2_p14_c1",
+        "filename": "2307.13528v2.pdf",
+        "page_number": 14,
+        "chunk_number": 1,
+        "similarity": 0.36979377269744873,
+        "text": "A systematic survey of prompting methods in natural language processing. ACM Computing Surveys, 55(9):1–35. Yixin Liu, Alexander R Fabbri, Pengfei Liu, Yilun Zhao, Linyong Nan, Ruilin Han, Simeng Han, Shafiq Joty, Chien-Sheng Wu, Caiming Xiong, et al. 2022. Revisiting the gold standard: Grounding summarization evaluation with robust human evaluation. arXiv preprint arXiv:2212.07981. Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark. 2023. Self-refine: Iterative refinement with self-feedback. OpenAI. 2023. Gpt-4 technical report. Ofir Press, Muru Zhang, Sewon Min, Ludwig Schmidt, Noah A. Smith, and Mike Lewis. 2022. Measuring and narrowing the compositionality gap in language models. Timo Schick, Jane Dwivedi-Yu, Roberto Dessì, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. 2023. Toolformer: Language models can teach themselves to use tools. John Schulman. 2023. Reinforcement learning from human feedback: Progress and challenges. Yongliang Shen, Kaitao Song, Xu Tan, Dongsheng Li, Weiming Lu, and Yueting Zhuang. 2023. Hugginggpt: Solving ai tasks with chatgpt and its friends in huggingface. Freda Shi, Daniel Fried, Marjan Ghazvininejad, Luke Zettlemoyer, and Sida I. Wang. 2022. Natural language to code translation with execution. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 3533–3546, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics. Ross Taylor, Marcin Kardas, Guillem Cucurull, Thomas Scialom, Anthony Hartshorn, Elvis Saravia, Andrew Poulton, Viktor Kerkez, and Robert Stojnic. 2022. Galactica: A large language model for science. Romal Thoppilan, Daniel De Freitas, Jamie Hall, Noam Shazeer, Apoorv Kulshreshtha, Heng-Tze Cheng, Alicia Jin, Taylor Bos, Leslie Baker, Yu Du, et al. 2022. Lamda: Language models for dialog applications. arXiv preprint arXiv:2201.08239. James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018a. FEVER: a large-scale dataset for fact extraction and VERification. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 809–819, New Orleans, Louisiana. Association for Computational Linguistics. James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. 2018b. FEVER: a large-scale dataset for fact extraction and VERification. In NAACL-HLT."
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p20_c1",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 20,
+        "chunk_number": 1,
+        "similarity": 0.3218268156051636,
+        "text": "description in the base prompt. • Character role prompt : defining a particular role (e.g., scientist) for the system in the base prompt. • Zero-shot cot prompt: adding zero-shot CoT to the base prompt by prepending “Let’s think step-by-step”. • Few-shot cot prompt: adding few-shot CoT to the base prompt by injecting CoT examples. Similarly, we test ChatGPT and Llama 2-Chat (7B) with these improved prompts to generate responses. For few-shot cot prompt , the few-shot reasoning examples are manually-written and different for each domain. Results and Analysis. We show the prompt improvement results in Table 14. We can found that injecting domain information into task description or defining a character role for the system has an oscillatory effect on mitigating the hallucinations in LLM’s responses. In the domains of finance and science, the two prompt improvement strategies can help LLMs generate more accurate responses. For Chain-of-Thought (CoT) prompting, its effect on hallucination mitigation heavily depends on the specific LLMs. For larger models like ChatGPT which possess exceptional reasoning capabilities, zero-shot or few-shot CoT reasoning can significantly benefit reducing the hallucinations. While for smaller models like Llama 2-Chat (7B) with limited reasoning abilities, leveraging CoT reasoning fails to effectively eliminate hallucinations and instead exacerbates the presence of hallucinations in their responses. Therefore, when engaging in prompt engineering, it is crucial to comprehensively consider factors such as model size, domain 10898"
+      },
+      {
+        "chunk_id": "2406.15927v1_p11_c0",
+        "filename": "2406.15927v1.pdf",
+        "page_number": 11,
+        "chunk_number": 0,
+        "similarity": 0.3161768615245819,
+        "text": "[5] Band, N., Li, X., Ma, T., and Hashimoto, T. Linguistic calibration of language models. arXiv:2404.00474, 2024. [6] Belinkov, Y . Probing classifiers: Promises, shortcomings, and advances.Computational Linguistics, 2021. [7] Belrose, N., Furman, Z., Smith, L., Halawi, D., Ostrovsky, I., McKinney, L., Biderman, S., and Steinhardt, J. Eliciting latent predictions from transformers with the tuned lens. arXiv 2303.08112, 2023. [8] Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al. Language models are few-shot learners. NeurIPS, 2020. [9] Burns, C., Ye, H., Klein, D., and Steinhardt, J. Discovering latent knowledge in language models without supervision. In ICLR, 2023. [10] Cao, M., Dong, Y ., and Cheung, J. C. K. Hallucinated but factual! inspecting the factuality of hallucinations in abstractive summarization. In ACL, 2022. [11] Chen, J. and Mueller, J. Quantifying uncertainty in answers from any language model and enhancing their trustworthiness. arXiv 2308.16175, 2023. [12] Chuang, Y .-S., Xie, Y ., Luo, H., Kim, Y ., Glass, J., and He, P. Dola: Decoding by contrasting layers improves factuality in large language models. In ICLR, 2024. [13] Cole, J. R., Zhang, M. J., Gillick, D., Eisenschlos, J. M., Dhingra, B., and Eisenstein, J. Selectively answering ambiguous questions. EMNLP, 2023. [14] Deutsch, D., Bedrax-Weiss, T., and Roth, D. Towards question-answering as an automatic metric for evaluating the content quality of a summary. TACL, 2021. [15] Dhuliawala, S., Komeili, M., Xu, J., Raileanu, R., Li, X., Celikyilmaz, A., and Weston, J. Chain-ofverification reduces hallucination in large language models. arXiv:2309.11495, 2023. [16] Duan, J., Cheng, H., Wang, S., Wang, C., Zavalny, A., Xu, R., Kailkhura, B., and Xu, K. Shifting attention to relevance: Towards the uncertainty estimation of large language models. arXiv:2307.01379, 2023. [17] Durmus, E., He, H., and Diab, M. Feqa: A question answering evaluation framework for faithfulness assessment in abstractive summarization. ACL, 2020. [18] Dziri, N., Madotto, A., Zaïane, O., and Bose, A. J. Neural path hunter: Reducing hallucination in dialogue systems via path grounding. In EMNLP, 2021. [19] Elaraby, M., Lu, M., Dunn, J., Zhang, X., Wang, Y ., and Liu, S. Halo: Estimation and reduction of hallucinations in open-source weak large language models. arXiv:2308.11764, 2023. [20] Farquhar, S., Varma, V ., Kenton, Z., Gasteiger, J., Mikulik, V ., and Shah, R. Challenges with unsupervised llm knowledge discovery. arXiv:2312.06681, 2023. [21] Farquhar, S., Kossen, J., Kuhn, L., and"
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p11_c2",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 11,
+        "chunk_number": 2,
+        "similarity": 0.31221261620521545,
+        "text": "the middle: How language models use long contexts. CoRR, abs/2307.03172. Macedo Maia, Siegfried Handschuh, André Freitas, Brian Davis, Ross McDermott, Manel Zarrouk, and Alexandra Balahur. 2018. Www’18 open challenge: financial opinion mining and question answering. In Companion Proceedings of the The Web Conference 2018, pages 1941–1942. 10889"
+      },
+      {
+        "chunk_id": "s41586-024-07421-0_p3_c0",
+        "filename": "s41586-024-07421-0.pdf",
+        "page_number": 3,
+        "chunk_number": 0,
+        "similarity": 0.3121635615825653,
+        "text": "Nature | Vol 630 | 20 June 2024 | 627 aim to ‘learn’ how to detect confabulations from a set of example demonstrations. Our method is unsupervised, meaning that we do not need labelled examples of confabulations. By contrast, supervised methods detect confabulations by learning patterns behind examples of confabulations, assuming that future questions preserve these patterns. But this assumption is often untrue in new situations or with confabulations that human overseers are unable to identify (com pare Fig. 17 of ref. 24). As a strong supervised baseline, we compare to an embedding regression method inspired by ref. 24 which trains a logistic regression classifier to predict whether the model correctly answered a question on the basis of the final ‘embedding’ (hidden state) of the LLM. We also use the P(True) method24 which looks at the probability with which an LLM predicts that the next token is ‘True’ when few-shot prompted to compare a main answer with ‘brainstormed’ alternatives. Confabulations contribute substantially to incorrect answers given by language models. We show that semantic entropy can be used to predict many incorrect model answers and to improve question-answering accuracy by refusing to answer those questions the model is uncertain about. Corresponding to these two uses, we evaluate two main metrics. First, the widely used area under the receiver operating characteristic (AUROC) curve for the binary event that a given answer is incorrect. This measure captures both precision and recall and ranges from 0 to 1, with 1 representing a perfect classifier and 0.5 representing an un-informative classifier. We also show a new measure, the area under the ‘rejection accuracy’ curve (AURAC). This studies the case in which the confabulation detection score is used to refuse to answer the questions judged most likely to cause confabulations. Rejection accuracy is the accuracy of the answers of the model on the remaining questions and the area under this curve is a summary statistic over many thresholds (representative threshold accuracies are provided in Supplementary Material). The AURAC captures the accuracy improvement which users would experience if semantic entropy was used to filter out questions causing the highest entropy. Detecting confabulations in QA and math In Fig. 2, we show that both semantic entropy and its discrete approximation outperform our best baselines for sentence-length generations. These results are averaged across datasets and provide the actual scores on the held-out evaluation dataset. We report the raw average"
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "question": "Which hallucination detection method is definitively the most accurate method for every possible large language model and every task?",
+    "question_type": "unanswerable",
+    "answerable": false,
+    "expected_sources": [],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.7096755504608154,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "QA Question Choice Pointwise Score & Acc Wiki-FACTOR 2,994 English    Multi-Choice QA Question Choice Pointwise Score & Acc Wiki-FACTOR 1,036 Multi-Choice QA Question Answer likelihoodFACTOR 2,994 English    Multi-Choice QA Question Answer likelihoodFACTOR 2,994 English    Multi-Choice QA Question Answer likelihoodFACTOR 2,994 English    Multi-Choice QA Question Answer likelihoodFACTOR 2,994 English    Multi-Choice",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2311.05232v2_p17_c0",
+        "filename": "2311.05232v2.pdf",
+        "page_number": 17,
+        "chunk_number": 0,
+        "similarity": 0.7096755504608154,
+        "text": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions 1:17 Detection Benchmarks (§4.2.2), designed specifically to evaluate the performance of existing hallucination detection methods. Collectively, these benchmarks establish a unified framework, enabling a nuanced and thorough exploration of hallucinatory patterns in LLMs. Table 4. An overview of existing hallucination benchmarks. For Attribute, Factuality and Faithfulness represent whether the benchmark is used to evaluate LLM’s factuality or to detect faithfulness hallucination, and Manual represents whether the inputs in the data are handwritten. Attribute Task Benchmark Datasets Data Size Language Factuality Faithfulness Manual Task Type Input Label Metric Generative QATruthfulQA [182] - 817 English ✔ ✗ ✔ Multi-Choice QA Question Answer LLM-Judge & Human Multi-Choice QA AccREALTIMEQA [148] - Dynamic English ✔ ✗ ✔ Generative QA Question Answer EM & F1 SelfCheckGPT-Wikibio [213] - 1,908 English ✗ ✔ ✗ Detection Paragraph & Concept Passage AUROC Task-specific 30,000 English ✗ ✔ ✗ Detection Query Response AccHaluEval [169] General 5,000 English ✗ ✔ ✗ Detection Task Input Response Acc Med-HALT [303] - 4,916 Multilingual ✔ ✗ ✗ Multi-Choice QA Question Choice Pointwise Score & Acc Wiki-FACTOR 2,994 English ✔ ✗ ✗ Multi-Choice QA Question Answer likelihoodFACTOR [223] News-FACTOR 1,036 English ✔ ✗ ✗ Multi-Choice QA Question Answer likelihood SenHallu 200 English ✗ ✔ ✗ Detection Paper Summary P & R & F1BAMBOO [76] AbsHallu 200 English ✗ ✔ ✗ Detection Paper Summary P & R & F1 ChineseFactEval [311] - 125 Chinese ✔ ✗ ✔ Generative QA Question - Score Misleading 175 Chinese ✔ ✗ ✔ Generative QA Question Answer LLM-Judge Misleading-hard 69 Chinese ✔ ✗ ✔ Generative QA Question Answer LLM-JudgeHaluQA [49] Knowledge 206 Chinese ✔ ✗ ✔ Generative QA Question Answer LLM-Judge Never-changing 150 English ✔ ✗ ✔ Generative QA Question Answer Human Slow-changing 150 English ✔ ✗ ✔ Generative QA Question Answer Human Fast-changing 150 English ✔ ✗ ✔ Generative QA Question Answer Human FreshQA [308] False-premise 150 English ✔ ✗ ✔ Generative QA Question Answer Human FELM [42] - 3,948 English ✔ ✔ ✗ Detection Question Response Balanced Acc & F1 PHD-LOW 100 English ✗ ✔ ✗ Detection Entity Response P & R & F1 PHD-Meidum 100 English ✗ ✔ ✗ Detection Entity Response P & R & F1PHD [340] PHD-High 100 English ✗ ✔ ✗ Detection Entity Response P & R & F1 ScreenEval [158] - 52 English ✗ ✔ ✗ Detection Document Summary"
+      },
+      {
+        "chunk_id": "2025.cl-4.9_p43_c0",
+        "filename": "2025.cl-4.9.pdf",
+        "page_number": 43,
+        "chunk_number": 0,
+        "similarity": 0.6881621479988098,
+        "text": "Zhang et al. A Survey on Hallucination in Large Language Models 2023b. Llama 2: Open foundation and ﬁne-tuned chat models. arXiv preprint arXiv:2307.09288. Umapathi, Logesh Kumar, Ankit Pal, and Malaikannan Sankarasubbu. 2023. Med-HALT: Medical domain hallucination test for large language models. arXiv preprint arXiv:2307.15343. Varshney, Neeraj, Wenlin Yao, Hongming Zhang, Jianshu Chen, and Dong Yu. 2023. A stitch in time saves nine: Detecting and mitigating hallucinations of LLMs by validating low-conﬁdence generation. arXiv preprint arXiv:2307.03987. Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. Advances in Neural Information Processing Systems, 30. Wan, Fanqi, Xinting Huang, Leyang Cui, Xiaojun Quan, Wei Bi, and Shuming Shi. 2024. Knowledge veriﬁcation to nip hallucination in the bud. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, pages 2616–2633. https://doi.org /10.18653/v1/2024.emnlp-main.152 Wang, Chaojun and Rico Sennrich. 2020. On exposure bias, hallucination and domain shift in neural machine translation. arXiv preprint arXiv:2005.03642. https://doi.org/10.18653/v1 /2020.acl-main.326 Wang, Guanzhi, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar. 2023a. Voyager: An open-ended embodied agent with large language models. arXiv preprint arXiv:2305.16291. Wang, Hongmin. 2019. Revisiting challenges in data-to-text generation with fact grounding. In Proceedings of the 12th International Conference on Natural Language Generation, pages 311–322. https://doi.org/10.18653 /v1/W19-8639 Wang, Xuezhi, Jason Wei, Dale Schuurmans, Quoc V . Le, Ed H. Chi, Sharan Narang, Aakanksha Chowdhery, and Denny Zhou. 2022. Self-consistency improves chain of thought reasoning in language models. In The Eleventh International Conference on Learning Representations. Wang, Yizhong, Hamish Ivison, Pradeep Dasigi, Jack Hessel, Tushar Khot, Khyathi Raghavi Chandu, David Wadden, Kelsey MacMillan, Noah A Smith, Iz Beltagy, et al. 2023b. How far can camels go? Exploring the state of instruction tuning on open resources. arXiv preprint arXiv:2306.04751. Wang, Yizhong, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith, Daniel Khashabi, and Hannaneh Hajishirzi. 2023c. Self-instruct: Aligning language models with self-generated instructions. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13484–13508. https://doi.org /10.18653/v1/2023.acl-long.754 Wang, Zhenhailong, Shaoguang Mao, Wenshan Wu, Tao Ge, Furu Wei, and Heng Ji. 2023d. Unleashing cognitive synergy in large language models: A task-solving agent through multi-persona self-collaboration. arXiv preprint arXiv:2307.05300. https://doi.org /10.18653/v1/2024.naacl-long.15 Wei, Alexander, Nika Haghtalab, and Jacob Steinhardt. 2023. Jailbroken: How does LLM safety training fail? arXiv preprint arXiv:2307.02483. Wei, Jason,"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.1088_p10_c1",
+        "filename": "2024.emnlp-main.1088.pdf",
+        "page_number": 10,
+        "chunk_number": 1,
+        "similarity": 0.68242347240448,
+        "text": "nlp tasks. ArXiv, abs/2005.11401. Junyi Li and Xiaoxue Cheng et al. 2023a. Halueval: A large-scale hallucination evaluation benchmark for large language models. CoRR, abs/2305.11747. Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Wayne Xin Zhao, and Ji rong Wen. 2023. Evaluating object hallucination in large vision-language models. In Conference on Empirical Methods in Natural Language Processing. Yuanzhi Li and Sébastien Bubeck et al. 2023b. Textbooks are all you need II: phi-1.5 technical report. CoRR, abs/2309.05463. Stephanie Lin, Jacob Hilton, and Owain Evans. 2022. Truthfulqa: Measuring how models mimic human falsehoods. In ACL, pages 3214–3252. Tsung-Yi Lin, Michael Maire, Serge J. Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár, and C. Lawrence Zitnick. 2014. Microsoft coco: Common objects in context. In European Conference on Computer Vision. Fuxiao Liu, Kevin Lin, Linjie Li, Jianfeng Wang, Yaser Yacoob, and Lijuan Wang. 2023. Mitigating hallucination in large multi-modal models via robust instruction tuning. Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. 2022. Locating and editing factual associations in gpt. In Neural Information Processing Systems. Sewon Min and Kalpesh Krishna et al. 2023. Factscore: Fine-grained atomic evaluation of factual precision in long form text generation. CoRR, abs/2305.14251. Eric Mitchell, Charles Lin, Antoine Bosselut, Chelsea Finn, and Christopher D. Manning. 2021. Fast model editing at scale. ArXiv, abs/2110.11309. Dor Muhlgay, Ori Ram, and Inbal Magar et al. 2023. Generating benchmarks for factuality evaluation of language models. CoRR, abs/2307.06908. Reiichiro Nakano, Jacob Hilton, and et al. 2021. Webgpt: Browser-assisted question-answering with human feedback. ArXiv, abs/2112.09332. Long Ouyang, Jeff Wu, and Xu Jiang et al. 2022. Training language models to follow instructions with human feedback. ArXiv, abs/2203.02155. Rafael Rafailov, Archit Sharma, and et al. 2023. Direct preference optimization: Your language model is secretly a reward model. CoRR, abs/2305.18290. Vipula Rawte, Swagata Chakraborty, and Agnibh et al. Pathak. 2023a. The troubling emergence of hallucination in large language models - an extensive definition, quantification, and prescriptive remediations. In EMNLP 2023, pages 2541–2573. Vipula Rawte, Amit P. Sheth, and Amitava Das. 2023b. A survey of hallucination in large foundation models. CoRR, abs/2309.05922. 19528"
+      },
+      {
+        "chunk_id": "2025.cl-4.9_p29_c1",
+        "filename": "2025.cl-4.9.pdf",
+        "page_number": 29,
+        "chunk_number": 1,
+        "similarity": 0.6702011823654175,
+        "text": "accurately reﬂect the performance or align with human annotation. Such inaccuracy is reﬂected in two ways: (1) The automatic metric does not perfectly align with human annotations (Lin, Hilton, and Evans 2021; Min et al. 2023; Muhlgay et al. 2023); (2) The reliability of automatic metric varies across texts from different domains or generated by different LLMs (Min et al. 2023), resulting in reduced robustness for generalization. Although the discrimination-style benchmark (Li et al. 2023a; Muhlgay et al. 2023) could relatively accurately evaluate a model’s ability to distinguish hallucinations, the relationship between discrimination performance and generation performance is still unclear until now. These issues all need more in-depth exploration. Multilingual Hallucination. Existing work in LLM hallucination primarily focuses on English, despite the existence of thousands of languages in the world. We hope that 1401"
+      },
+      {
+        "chunk_id": "2401.06855v4_p1_c0",
+        "filename": "2401.06855v4.pdf",
+        "page_number": 1,
+        "chunk_number": 0,
+        "similarity": 0.6658340096473694,
+        "text": "Published as a conference paper at COLM 2024 Fine-grained Hallucination Detection and Editing for Language Models Abhika Mishra1, Akari Asai1, Vidhisha Balachandran2, Yizhong Wang1 Yulia Tsvetkov1, Graham Neubig2, Hannaneh Hajishirzi1,3 1University of Washington 2Carnegie Mellon University 3Allen Institute for AI {abhikam,akari,yizhongw, yuliats, hannaneh }@cs.washington.edu, {vbalacha, gneubig}@cs.cmu.edu Abstract Large language models (LMs) are prone to generate factual errors, which are often called hallucinations. In this paper, we introduce a comprehensive taxonomy of hallucinations and argue that hallucinations manifest in diverse forms, each requiring varying degrees of careful assessments to verify factuality. We propose a novel task of automatic fine-grained hallucination detection and construct a new evaluation benchmark, FAVABENCH , that includes about one thousand fine-grained human judgments on three LM outputs across various domains. Our analysis reveals that ChatGPT and Llama2-Chat (70B, 7B) exhibit diverse types of hallucinations in the majority of their outputs in information-seeking scenarios, highlighting the need to build fine-grained systems. To this end, we train FAVA, a powerful retrieval-augmented LM by carefully creating synthetic data to detect and correct fine-grained hallucinations. Our automatic and human evaluations show that FAVA significantly outperforms retrieval-augmented ChatGPT and GPT-4 on fine-grained hallucination detection. Furthermore, FAVA outperforms widely-used hallucination detection systems on binary detection and shows effectiveness in editing to improve the factuality.1 Fine-grained Hallucination Detection Messi is a soccer player in <entity>BarcelonaMiami<entity>. <invented>He is known for the 2017 film \"The Messi Diaries”. </invented> Entity Relation Unverifiable SubjectiveInvented Contradictory Hallucination Types Messi is a soccer player in Barcelona. He is known for the 2017 film \"The Messi Diaries”. Binary (Coarse-grained) Hallucination Detection No further context on factuality errors LM Output Messi is a soccer player in Barcelona. He is known for the 2017 film \"The Messi Diaries”. [1] Messi is now a captain for the Major League Soccer club Inter Miami. [2] Documentaries about Messi: -Messi, Lionel Messi: The Greatest… References 🪴FAVA Input: LM Output + References Output: FA V A’s Fine-grained Detection + Editing Figure 1: Overview of our taxonomy, fine-grained hallucination detection task, and FAVA. 1 Introduction Large language models (LMs; Brown et al. 2020) can generate highly fluent and plausible text. However, these models are prone to produce factually incorrect or unverifiable statements, often called hallucinations. This impedes their deployment in real-world applications for information-seeking contexts (Mallen et al., 2022; Asai et al., 2024). Prior work on hallucinations in natural language generation (NLG) often assumes the presence of a"
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "question": "Do all studies in this corpus agree on a single definition and measurement of hallucination?",
+    "question_type": "ambiguous",
+    "answerable": true,
+    "expected_sources": [
+      "2311.05232v2.pdf",
+      "2024.emnlp-main.1088.pdf",
+      "2024.emnlp-main.375.pdf",
+      "2025.cl-4.9.pdf"
+    ],
+    "evidence_threshold": 0.5,
+    "strongest_similarity": 0.7758592367172241,
+    "evidence_sufficient": true,
+    "status": "ANSWERED",
+    "answer": "lack of consensus",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "2024.emnlp-main.375_p4_c2",
+        "filename": "2024.emnlp-main.375.pdf",
+        "page_number": 4,
+        "chunk_number": 2,
+        "similarity": 0.7758592367172241,
+        "text": "is inherently a shared vocabulary within these domains. Unfortunately, out of the 103 works examined, only 3 acknowledge the this nature of hallucination, with none utilizing this framework to inform their approach. 6531"
+      },
+      {
+        "chunk_id": "2024.acl-long.586_p9_c2",
+        "filename": "2024.acl-long.586.pdf",
+        "page_number": 9,
+        "chunk_number": 2,
+        "similarity": 0.7535112500190735,
+        "text": "empirical findings on the source and mitigation of hallucination. 10887"
+      },
+      {
+        "chunk_id": "2305.11747v3_p7_c2",
+        "filename": "2305.11747v3.pdf",
+        "page_number": 7,
+        "chunk_number": 2,
+        "similarity": 0.6851410865783691,
+        "text": "a token-level fact critic to recognize hallucination and rectify them in dialogue (Dziri et al., 2021). To enhance the understanding of hallucination in LLMs and pro-"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.375_p4_c1",
+        "filename": "2024.emnlp-main.375.pdf",
+        "page_number": 4,
+        "chunk_number": 1,
+        "similarity": 0.6626608371734619,
+        "text": "it is evident that each perceives hallucination differently, emphasizing specific attributes such as factuality, fidelity, or linguistic styles like confidence, while potentially overlooking others. This diversity indicates that hallucination as a concept is still in its early stages in the field, with various frameworks emerging and a general lack of consensus regarding its definition and application. Furthermore, the lack of social aspects in hallucination discussions in these subfields contrasts with the broader understanding and research in fields like healthcare. 4.3 Audit of Frameworks We now scrutinize the dominant frameworks employed in defining hallucination while also assessing the extent to which these models accurately capture the phenomenon. We start by looking at how many of the selected works explicitly define hallucination. Out of the 103 papers, just 44 (42.7%) provide a definition of the term, leaving the majority—59 papers or 57.3% —either altogether omitting their understanding of hallucination in the context of their research or providing no definition or a framework. This lack of transparency is not only concerning but also underscores the need for clarity, especially given the varied interpretations of hallucination across different research domains. Taking our scrutiny a step further, we investigate whether the works defining hallucination reference and acknowledge preexisting frameworks. It emerges that only 29 papers or 27% of the selected works explicitly acknowledge and adhere to established frameworks of hallucination, while the remainder 73% either loosely define the term or devise new definitions tailored to their specific research scope. This trend within the field shows a lack of consensus on the conceptualization of hallucination, leading to disparate interpretations and a shortage of discourse on the subject. We also audit the sociotechnical nature of the definitions of hallucination in NLP. Hallucination (elucidated in Appendix 10.1) inherently contains social dimensions, creating varied perspectives across different social contexts. Moreover, given the evolution of LMs into social spaces, adopting a sociotechnical approach becomes necessary, given that the term ‘hallucination’ is inherently a shared vocabulary within these domains. Unfortunately, out of the 103 works examined, only 3 acknowledge the this nature of hallucination, with none utilizing this framework to inform their approach. 6531"
+      },
+      {
+        "chunk_id": "2024.emnlp-main.375_p2_c2",
+        "filename": "2024.emnlp-main.375.pdf",
+        "page_number": 2,
+        "chunk_number": 2,
+        "similarity": 0.6543691158294678,
+        "text": "Critical Analysis of Hallucination in NLP Literature This section is dedicated to conducting an audit of hallucination research within NLP, aiming to uncover its applications and subsequently identify the strengths and weaknesses in current literature. To accomplish this, we conducted an audit of works from the ACL anthology using specific 6529"
+      }
+    ]
+  }
+]
