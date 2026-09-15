@@ -87,7 +87,7 @@ Evidence_RAG/
 Clone the repository:
 
 ```bash
-git clone <https://github.com/pjyo57/Evidence_RAG>
+clone https://github.com/pjyo57/Evidence_RAG.git
 cd Evidence_RAG
 ```
 
