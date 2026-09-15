@@ -45,7 +45,7 @@ The main research question is:
 * Internet access is required the first time the Hugging Face models are downloaded.
 
 ### Project structure
-
+```text
 Evidence_RAG/
 │
 ├── data/
@@ -80,6 +80,7 @@ Evidence_RAG/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ### Installation
 
